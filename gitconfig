@@ -1,3 +1,7 @@
 [user]
 	name = W. Evan Sheehan
 	email = wallace.sheehan@gmail.com
+[alias]
+	st = status
+	co = checkout
+	ci = commit
