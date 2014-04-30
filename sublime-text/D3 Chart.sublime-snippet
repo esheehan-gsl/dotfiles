@@ -1,0 +1,21 @@
+<snippet>
+    <content><![CDATA[
+function ${1:chartName}(${2:container}) {
+    function ${3:chart}(${4:data}) {
+
+    }
+
+    // Public methods
+
+    // Private methods
+
+    // Private variables
+
+    return $3;
+}
+]]></content>
+    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+    <tabTrigger>chart</tabTrigger>
+    <!-- Optional: Set a scope to limit where the snippet will trigger -->
+    <scope>source.js</scope>
+</snippet>
