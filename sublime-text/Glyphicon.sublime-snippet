@@ -1,0 +1,8 @@
+<snippet>
+    <content><![CDATA[
+<span class="glyphicon glyphicon-$1"></span>
+]]></content>
+    <tabTrigger>glyph</tabTrigger>
+    <scope>text.html</scope>
+    <description>Insert a Bootstrap glyphicon.</description>
+</snippet>
