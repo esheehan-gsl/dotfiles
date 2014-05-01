@@ -1,0 +1,27 @@
+<snippet>
+	<content><![CDATA[
+		# CiviCRM
+		User:    $1
+		Website: in.momath.org
+
+		# Email
+		User: $1@momath.org
+		Incoming server type: IMAP
+		Incoming server: mail.momath.org
+		Outgoing server (SMTP): mail.momath.org
+		Webmail: webmail.momath.org
+
+		# Calendar
+		User: $1
+		CalDAV server: calendar.momath.org
+
+		# Web Disk
+		User: $1@in.momath.org
+		WebDAV server: in.momath.org
+		Port: 2078
+
+		# LightSpeed
+		User: $1
+	]]></content>
+	<description>Text file with MoMath account info for new employees.</description>
+</snippet>
