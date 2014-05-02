@@ -1,7 +1,11 @@
+[core]
+	editor = vim -f
 [user]
 	name = W. Evan Sheehan
 	email = wallace.sheehan@gmail.com
 [alias]
 	st = status
-	co = checkout
 	ci = commit
+	co = checkout
+[push]
+	default = simple
