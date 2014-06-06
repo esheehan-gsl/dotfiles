@@ -7,5 +7,6 @@
 		"Vintage"
 	],
 	"line_padding_bottom": 2,
-	"wrap_width": 78
+	"wrap_width": 80,
+	"rulers": [80],
 }
