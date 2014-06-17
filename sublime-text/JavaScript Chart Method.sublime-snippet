@@ -1,13 +1,13 @@
 <snippet>
     <content><![CDATA[
 ${1:chart}.$2 = function(value) {
-    if (!arguments.length) {
-        return $2;
-    }
+	if (!arguments.length) {
+		return $2;
+	}
 
-    $2 = value;
+	$2 = value;
 
-    return $1;
+	return $1;
 };
 ]]></content>
     <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
