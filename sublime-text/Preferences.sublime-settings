@@ -1,5 +1,4 @@
 {
-	"color_scheme": "Packages/User/Monokai (SL).tmTheme",
 	"font_face": "Inconsolata",
 	"font_size": 12.0,
 	"highlight_line": true,
@@ -8,6 +7,9 @@
 		"Vintage"
 	],
 	"line_padding_bottom": 2,
-	"wrap_width": 80,
-	"rulers": [80],
+	"rulers":
+	[
+		80
+	],
+	"wrap_width": 80
 }
