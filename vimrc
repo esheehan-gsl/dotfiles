@@ -7,14 +7,16 @@ call vundle#begin()
 
 Plugin 'airblade/vim-gitgutter'
 Plugin 'ctrlp.vim'
+Plugin 'darthmall/vim-vue'
 Plugin 'editorconfig-vim'
 Plugin 'ehamberg/vim-cute-python'
 Plugin 'gmarik/Vundle.vim'
+Plugin 'groenewege/vim-less'
 Plugin 'mattn/emmet-vim'
-Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/nerdtree'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
+Plugin 'vim-scripts/Align'
 Plugin 'wookiehangover/jshint.vim'
 
 call vundle#end()
