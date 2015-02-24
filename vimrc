@@ -6,18 +6,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'ctrlp.vim'
+Plugin 'wincent/command-t'
 Plugin 'darthmall/vim-vue'
 Plugin 'editorconfig-vim'
-Plugin 'ehamberg/vim-cute-python'
 Plugin 'gmarik/Vundle.vim'
 Plugin 'groenewege/vim-less'
 Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
-Plugin 'terryma/vim-multiple-cursors'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Align'
-Plugin 'wookiehangover/jshint.vim'
 
 call vundle#end()
 
