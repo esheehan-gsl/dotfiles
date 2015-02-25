@@ -6,7 +6,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'airblade/vim-gitgutter'
-Plugin 'wincent/command-t'
 Plugin 'darthmall/vim-vue'
 Plugin 'editorconfig-vim'
 Plugin 'gmarik/Vundle.vim'
@@ -15,6 +14,8 @@ Plugin 'mattn/emmet-vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-fugitive'
 Plugin 'vim-scripts/Align'
+Plugin 'pangloss/vim-javascript'
+Plugin 'ctrlp.vim'
 
 call vundle#end()
 
@@ -52,7 +53,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " vim-javascript
 let g:javascript_enable_domhtmlcss=1
-let g:javascript_conceal=1
+let g:javascript_conceal=0
 
 " Key bindings
 map <C-k><C-b> :NERDTreeToggle<CR>
