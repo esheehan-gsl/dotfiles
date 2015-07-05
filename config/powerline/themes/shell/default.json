@@ -1,4 +1,12 @@
 {
+	"segment_data": {
+		"cwd": {
+			"args": {
+				"ellipsis": "⋯ ",
+				"use_path_separator": true
+			}
+		}
+	},
 	"segments": {
 		"left": [
 			{
