@@ -1,0 +1,24 @@
+{
+	"segments": {
+		"right": [{
+			"name": "branch",
+			"function": "powerline.segments.common.vcs.branch",
+			"args": {
+				"status_colors": true,
+				"ignore_statuses": ["U"]
+			}
+		},{
+			"function": "powerline.segments.common.time.date"
+		},{
+			"function": "powerline.segments.common.time.date",
+			"name": "time",
+			"before": "",
+			"args": {
+				"format": "%H:%M",
+				"istime": true
+			}
+		},{
+			"function": "powerline.segments.common.net.hostname"
+		}]
+	}
+}
