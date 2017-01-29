@@ -27,7 +27,7 @@ function prompt {
       delta=" \[\e[0;31m\]𝚫"
     fi
 
-    local git_msg="[\[\e[0;32m\]$branchname$behind$ahead$delta\[\e[0;0m\]] "
+    local git_msg="[\[\e[0;32m\]$branchname$behind$ahead$delta\[\e[m\]] "
   fi
 
   export PS1="\w $git_msg "
