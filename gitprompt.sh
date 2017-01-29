@@ -22,12 +22,11 @@ function prompt {
       behind=" ▼$behind"
     fi
 
-    local delta=$(git status --porcelain -b | wc -l)
-    if [[ $delta -gt 1 ]]; then
-      delta=" \[\e[0;31m\]𝚫"
+    if [[ $(git status --porcelain -b | wc -l) -gt 1 ]]; then
+      local delta=" \[\e[0;31m\]𝚫"
     fi
 
-    local git_msg="[\[\e[0;32m\]$branchname$behind$ahead$delta\[$(tput sgr0)\]] "
+    local git_msg="[\[\e[0;32m\]$branchname$behind$ahead$delta\[\e[m\]] "
   fi
 
   export PS1="\w $git_msg "
