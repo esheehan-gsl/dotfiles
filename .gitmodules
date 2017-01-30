@@ -1,12 +1,3 @@
-[submodule "molokai"]
-	path = molokai
-	url = https://github.com/tomasr/molokai.git
 [submodule "solarized"]
 	path = solarized
-	url = https://github.com/hydrozen/solarized.git
-[submodule "iTerm2-Color-Schemes"]
-	path = iTerm2-Color-Schemes
-	url = https://github.com/mbadolato/iTerm2-Color-Schemes.git
-[submodule "git-flow-completion"]
-	path = git-flow-completion
-	url = https://github.com/bobthecow/git-flow-completion.git
+	url = https://github.com/altercation/solarized.git
