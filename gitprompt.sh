@@ -30,7 +30,7 @@ function prompt {
     local git_msg="[\[\e[0;32m\]$branchname$behind$ahead$dirty\[\e[m\]] "
   fi
 
-  export PS1="\w $git_msg\$ "
+  export PS1=$(echo -e "\w $git_msg\xC2\xA7 ")
 }
 
 export PROMPT_COMMAND=prompt
