@@ -5,4 +5,6 @@ alias ls="ls -G"
 alias ll="ls -laGh"
 alias datestamp="date '+%Y%m%d.%H%M%S'"
 
+export HISTCONTROL=ignoreboth:erasedups
+
 . ./Documents/dotfiles/gitprompt.sh
