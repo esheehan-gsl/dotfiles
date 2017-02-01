@@ -38,18 +38,16 @@ function prompt {
   # full path
   if [[ ${#NODES[@]} -gt 3 ]]; then
     local IDX=$(expr ${#NODES[@]} - 1)
-    CWD="${NODES[0]}/…/\e[0;36m${NODES[$IDX]}\e[m"
-  else
-    CWD="${NODES[0]}/${NODES[1]}/\e[0;36m${NODES[2]}\e[m"
-  fi
-  
-  if [[ ${NODES[0]} != "~" ]]; then
-    local CWD="/"$CWD
+    local CWD=${NODES[0]}"/…/"${NODES[$IDX]}
+    
+    if [[ ${NODES[0]} != "~" ]]; then
+      local CWD="/"$CWD
+    fi
   fi
   
   # Set prompt, using echo to ensure that unicode character at the end is
   # printed correctly in the terminal
-  export PS1=$(echo -e "$CWD $git_msg\e[0;36m\xC2\xA7\e[m ")
+  export PS1=$(echo -e "$CWD $git_msg\xC2\xA7 ")
 }
 
 export PROMPT_COMMAND=prompt
