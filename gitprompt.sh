@@ -45,9 +45,13 @@ function prompt {
     fi
   fi
   
+  if [[ -n "$VIRTUAL_ENV" ]]; then
+    local env_name="("`basename $VIRTUAL_ENV`") "
+  fi
+  
   # Set prompt, using echo to ensure that unicode character at the end is
   # printed correctly in the terminal
-  export PS1=$(echo -e "$CWD $git_msg\xC2\xA7 ")
+  export PS1=$(echo -e "$CWD $git_msg$env_name\xC2\xA7 ")
 }
 
 export PROMPT_COMMAND=prompt
