@@ -12,3 +12,8 @@ export WORKON_HOME=~/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
 . ./Documents/dotfiles/gitprompt.sh
+
+# virtualenv
+export WORKON_HOME=~/.virtualenvs
+. /usr/local/bin/virtualenvwrapper.sh
+
