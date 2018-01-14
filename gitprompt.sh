@@ -48,6 +48,10 @@ function prompt {
   if [[ -n "$VIRTUAL_ENV" ]]; then
     local env_name="("`basename $VIRTUAL_ENV`") "
   fi
+
+  if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
+    local env_name="("`basename $CONDA_DEFAULT_ENV`") "
+  fi
   
   # Set prompt, using echo to ensure that unicode character at the end is
   # printed correctly in the terminal
