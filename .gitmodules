@@ -31,3 +31,6 @@
 [submodule "FiraCode"]
 	path = FiraCode
 	url = https://github.com/tonsky/FiraCode.git
+[submodule "oceanic-next-iterm"]
+	path = oceanic-next-iterm
+	url = https://github.com/mhartington/oceanic-next-iterm.git
