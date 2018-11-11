@@ -51,10 +51,13 @@ fi
 # Set editor to some kind flavor of Vi, preferring NeoVim if it's available
 if [ -x $(which nvim) ]; then
   export EDITOR=nvim
+  export GIT_EDITOR='nvim -f'
 elif [ -x $(which vim) ]; then
   export EDITOR=vim
+  export GIT_EDITOR='vim -f'
 elif [ -x $(which vi) ]; then
   export EDITOR=vi
+  export GIT_EDITOR='vi -f'
 fi
 
 set completion-ignore-case on
