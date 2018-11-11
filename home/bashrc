@@ -60,5 +60,5 @@ elif [ -x $(which vi) ]; then
   export GIT_EDITOR='vi -f'
 fi
 
-set completion-ignore-case on
-set show-all-if-ambiguous on
+bind 'set completion-ignore-case on'
+bind 'set show-all-if-ambiguous on'
