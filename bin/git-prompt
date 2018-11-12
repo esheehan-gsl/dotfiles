@@ -28,23 +28,6 @@ function prompt {
     local git_msg="[\[\e[0;32m\]$branchname$behind$ahead$dirty\[\e[m\]] "
   fi
 
-  # Build a string for the CWD by replacing $HOME with ~
-  local CWD=${PWD/$HOME/'~'}
-  
-  # Tokenize path
-  IFS="/" read -a NODES <<< $(sed -E "s/^\/?(.*)\/?$/\1/" <<< $CWD)
-  
-  # Truncate long paths by inserting an ellipsis instead of enumerating
-  # full path
-  if [[ ${#NODES[@]} -gt 3 ]]; then
-    local IDX=$(expr ${#NODES[@]} - 1)
-    local CWD=${NODES[0]}"/…/"${NODES[$IDX]}
-    
-    if [[ ${NODES[0]} != "~" ]]; then
-      local CWD="/"$CWD
-    fi
-  fi
-  
   if [[ -n "$VIRTUAL_ENV" ]]; then
     local env_name="("`basename $VIRTUAL_ENV`") "
   fi
@@ -52,10 +35,10 @@ function prompt {
   if [[ -n "$CONDA_DEFAULT_ENV" ]]; then
     local env_name="("`basename $CONDA_DEFAULT_ENV`") "
   fi
-  
+
   # Set prompt, using echo to ensure that unicode character at the end is
   # printed correctly in the terminal
-  export PS1=$(echo -e "$CWD $git_msg\n$env_name\xC2\xA7 ")
+  echo -e "\w\n$env_name$git_msg\xC2\xA7 "
 }
 
-export PROMPT_COMMAND=prompt
+prompt

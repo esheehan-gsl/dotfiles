@@ -62,3 +62,9 @@ fi
 
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
+
+function prompt_command {
+  PS1=$(git-prompt)
+}
+
+PROMPT_COMMAND=prompt_command
