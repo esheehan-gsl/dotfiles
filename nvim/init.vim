@@ -16,6 +16,9 @@ set ignorecase smartcase
 " Just because it's a terminal doesn't mean I can't use a mouse
 set mouse=a
 
+" Plugins
+source ~/.config/nvim/my_plugins.vim
+
 " Folding {{{
 set foldenable
 set foldlevel=1
@@ -43,35 +46,6 @@ let g:LanguageClient_serverCommands = {
 
 inoremap <C-space> <C-O>:call LanguageClient#textDocument_completion()<CR>
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" }}}
-
-" Plugins {{{
-call plug#begin(expand('$HOME/.config/nvim/plug'))
-
-Plug 'mhartington/oceanic-next'
-
-Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-surround'
-
-" LanguageServer completion
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-Plug 'autozimu/languageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
-
-" File / buffer navigation
-Plug 'kien/ctrlp.vim'
-
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
-
-Plug 'vim-airline/vim-airline'
-
-call plug#end()
 " }}}
 
 " Colors {{{
