@@ -16,6 +16,7 @@ Plug 'autozimu/languageClient-neovim', {
 
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Git
 Plug 'tpope/vim-fugitive'
