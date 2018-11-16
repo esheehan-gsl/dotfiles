@@ -19,6 +19,10 @@ set mouse=a
 " Plugins
 source ~/.config/nvim/my_plugins.vim
 
+" Automatically resize splits when the window is resized. Important for
+" good behavior with tmux splits
+autocmd VimResized * :wincmd =
+
 " Folding {{{
 set foldenable
 set foldlevel=1
