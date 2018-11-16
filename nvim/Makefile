@@ -7,14 +7,20 @@ PLUG         := $(INSTALL_DIR)/autoload/plug.vim
 
 all : $(CONFIG_FILES) plugins_installed
 
-$(INSTALL_DIR)/%.vim : %.vim
+$(INSTALL_DIR)/%.vim : %.vim | $(INSTALL_DIR)
 	cp -v $? $@
 
-$(PLUG) :
-	curl -fLo $@ --create-dirs \
-		https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+$(PLUG) : | $(INSTALL_DIR)/autoload
+	wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	mv plug.vim $@
 
 plugins_installed : my_plugins.vim $(PLUG)
 	nvim +PlugUpgrade +qall --headless
 	nvim +PlugInstall +PlugClean! +PlugUpdate +qall --headless
 	touch $@
+
+$(INSTALL_DIR)/autoload :
+	mkdir -p $@
+
+$(INSTALL_DIR) :
+	mkdir -p $@
