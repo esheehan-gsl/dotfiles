@@ -15,8 +15,8 @@ $(PLUG) : | $(INSTALL_DIR)/autoload
 	mv plug.vim $@
 
 plugins_installed : my_plugins.vim $(PLUG)
-	nvim +PlugUpgrade +qall --headless
-	nvim +PlugInstall +PlugClean! +PlugUpdate +qall --headless
+	nvim --headless +PlugUpgrade +qall
+	nvim --headless +PlugClean! +PlugInstall! +PlugUpdate! +UpdateRemotePlugins! +qall
 	touch $@
 
 $(INSTALL_DIR)/autoload :

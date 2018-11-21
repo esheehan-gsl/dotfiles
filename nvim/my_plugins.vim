@@ -3,8 +3,11 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 Plug 'mhartington/oceanic-next'
 
 Plug 'editorconfig/editorconfig-vim'
-Plug 'mattn/emmet-vim'
 Plug 'tpope/vim-surround'
+
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'othree/yajs.vim'
 
 " LanguageServer completion
 Plug 'roxma/nvim-yarp'
