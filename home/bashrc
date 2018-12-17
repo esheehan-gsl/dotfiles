@@ -63,6 +63,8 @@ fi
 bind 'set completion-ignore-case on'
 bind 'set show-all-if-ambiguous on'
 
+export PATH=~/.local/bin:$PATH
+
 function prompt_command {
   PS1=$(git-prompt)
 }
