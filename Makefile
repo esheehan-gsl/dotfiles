@@ -1,6 +1,7 @@
 SHELL = /bin/sh
 
 XDG_CONFIG_DIR ?= ~/.config
+XDG_LOCAL_DIR  ?= ~/.local
 
 XDG_CONFIGS = nvim
 
@@ -36,7 +37,11 @@ installed/oceanic-next-gnome-terminal : | installed
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
 delegates : */Makefile
-	$(MAKE) -C $(dir $?) -e XDG_CONFIG_DIR=$(XDG_CONFIG_DIR)
+	for DELEGATE in $(^D); do \
+		${MAKE} -C $$DELEGATE \
+			-e XDG_CONFIG_DIR=$(XDG_CONFIG_DIR) \
+			-e XDG_LOCAL_DIR=$(XDG_LOCAL_DIR); \
+	done
 
 installed :
 	mkdir installed
