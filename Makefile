@@ -11,10 +11,15 @@ HOMEFILES = $(patsubst home/%,~/.%,$(wildcard home/*))
 # List of all local user scripts
 SCRIPTS = $(foreach f,$(wildcard bin/*),~/.local/$(f))
 
+LOGDIRS = backups
+
 .PHONY = all delegates
 
 all : $(HOMEFILES) $(SCRIPTS) \
 	$(foreach c,$(XDG_CONFIGS),$(XDG_CONFIG_DIR)/$(c)) \
+	$(foreach c,$(LOGDIRS),$(XDG_LOCAL_DIR)/logs/$(c)) \
+	$(XDG_CONFIG_DIR)/logrotate.conf \
+	$(XDG_LOCAL_DIR)/lib/logrotate \
 	delegates \
 	installed/oceanic-next-gnome-terminal
 
@@ -28,6 +33,15 @@ all : $(HOMEFILES) $(SCRIPTS) \
 
 ~/.local/bin :
 	mkdir -p ~/.local/bin
+
+$(XDG_CONFIG_DIR)/logrotate.conf :
+	cp logrotate.conf $@
+
+$(XDG_LOCAL_DIR)/logs/% :
+	mkdir -p $@
+
+$(XDG_LOCAL_DIR)/lib/% :
+	mkdir -p $@
 
 installed/oceanic-next-gnome-terminal : | installed
 	./oceanic-next-gnome-terminal/oceanic-next.bash
