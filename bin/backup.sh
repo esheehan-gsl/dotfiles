@@ -6,9 +6,23 @@ set -f
 
 BACKUP_DIR=$HOME
 
-# Ignore the Downloads directory, cruft created by the snap package manager,
-# config files in the home directory, and any development files
-EXCLUDE_LIST="Downloads snap .* **/.git **/node_modules"
+# List of files and directories to back up
+INCLUDE_LIST=(
+	Code
+	Desktop
+	Documents
+	Music
+	Pictures
+	Templates
+	Videos
+	.ssh
+	.gnupg
+)
+
+# Don't backup directories if any of these files are present
+EXCLUDE_IF_PRESENT=(
+	.git
+)
 
 # Minimum time between incremental backups: 30 days
 # Do a full backup if the last backup was too long ago.
@@ -33,10 +47,16 @@ FLAGS="--sign-key $SGN_KEY --encrypt-key $ENC_KEY"
 
 TARGET="b2://$B2_ID:$B2_KEY@$B2_BUCKET"
 
-EXCLUDES=""
-for pattern in $EXCLUDE_LIST
+INCLUDES=""
+for pattern in $INCLUDE_LIST
 do
-    EXCLUDES=$EXCLUDES" --exclude $BACKUP_DIR/$pattern"
+	INCLUDES=$INCLUDES" --include $BACKUP_DIR/$pattern"
+done
+
+EXCLUDES=""
+for pattern in $EXCLUDE_IF_PRESENT
+do
+    EXCLUDES=$EXCLUDES" --exclude-if-present $BACKUP_DIR/$pattern"
 done
 
 echo "==============================================="
@@ -52,7 +72,9 @@ duplicity remove-older-than $BACKUP_WINDOW \
 # Backup
 duplicity \
     $FLAGS \
+	$INCLUDES \
     $EXCLUDES \
+	--exclude * \
     --full-if-older-than $MIN_TIME_BETWEEN \
     $BACKUP_DIR \
     $TARGET
