@@ -60,8 +60,8 @@ duplicity remove-older-than $BACKUP_WINDOW \
 # Backup
 duplicity \
     $FLAGS \
-	$INCLUDES \
     $EXCLUDES \
+	$INCLUDES \
 	--exclude * \
     --full-if-older-than $MIN_TIME_BETWEEN \
     $BACKUP_DIR \
