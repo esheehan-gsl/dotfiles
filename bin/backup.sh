@@ -7,22 +7,10 @@ set -f
 BACKUP_DIR=$HOME
 
 # List of files and directories to back up
-INCLUDE_LIST=(
-	Code
-	Desktop
-	Documents
-	Music
-	Pictures
-	Templates
-	Videos
-	.ssh
-	.gnupg
-)
+INCLUDE_LIST="Code Desktop Documents Music Pictures Templates Videos .ssh .gnupg"
 
 # Don't backup directories if any of these files are present
-EXCLUDE_IF_PRESENT=(
-	.git
-)
+EXCLUDE_IF_PRESENT=".git"
 
 # Minimum time between incremental backups: 30 days
 # Do a full backup if the last backup was too long ago.
