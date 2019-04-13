@@ -1,6 +1,6 @@
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
-Plug 'mhartington/oceanic-next'
+Plug 'hhsnopek/vim-firewatch'
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
