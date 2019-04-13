@@ -25,6 +25,10 @@ autocmd VimResized * :wincmd =
 
 map <C-k><C-b> :NERDTreeToggle<CR>
 
+let g:ctrlp_custom_ignore = {
+  \ 'dir': 'node_modules',
+  \ }
+
 " Folding {{{
 set foldenable
 set foldlevel=1
