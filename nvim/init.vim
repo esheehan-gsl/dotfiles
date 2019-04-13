@@ -23,6 +23,8 @@ source ~/.config/nvim/my_plugins.vim
 " good behavior with tmux splits
 autocmd VimResized * :wincmd =
 
+map <C-k><C-b> :NERDTreeToggle<CR>
+
 " Folding {{{
 set foldenable
 set foldlevel=1
