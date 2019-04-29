@@ -9,7 +9,7 @@ function prompt {
     # Add count of commits we are ahead
     local ahead=$(echo $st | sed -nE "s/^##.*ahead ([0-9]+).*/\1/p")
     if [[ -n $ahead ]]; then
-      ahead=" \[\e[0;31m\]▲$ahead"
+      ahead=" ▲$ahead"
     fi
 
     # Add count of commits we are behind
@@ -21,11 +21,11 @@ function prompt {
     # Count number of changed/unstaged files
     local delta=$(git status --porcelain -b | wc -l)
     if [[ $delta -gt 1 ]]; then
-      local dirty=$(printf " \[\e[0;31m\]𝚫%d" $(($delta - 1)))
+      local dirty=$(printf " 𝚫%d" $(($delta - 1)))
     fi
 
-    # Forat the git message
-    local git_msg="[\[\e[0;32m\]$branchname$behind$ahead$dirty\[\e[m\]] "
+    # Format the git message
+    local git_msg="[\033[32m$branchname\033[34m$behind$ahead\033[31m$dirty\033[00m] "
   fi
 
   if [[ -n "$VIRTUAL_ENV" ]]; then
@@ -36,9 +36,7 @@ function prompt {
     local env_name="("`basename $CONDA_DEFAULT_ENV`") "
   fi
 
-  # Set prompt, using echo to ensure that unicode character at the end is
-  # printed correctly in the terminal
-  echo -e "\w\n$env_name$git_msg\xC2\xA7 "
+  echo -e "$env_name$git_msg"
 }
 
 prompt

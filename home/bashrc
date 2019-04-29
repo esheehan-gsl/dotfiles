@@ -65,8 +65,5 @@ bind 'set show-all-if-ambiguous on'
 
 export PATH=~/.local/bin:$PATH
 
-function prompt_command {
-  PS1=$(git-prompt)
-}
+export PS1="\n\[\033[2;37m\]\h:\[\033[00m\]\w\n\$(git-prompt)\$\[\033[00m\] "
 
-PROMPT_COMMAND=prompt_command
