@@ -67,3 +67,7 @@ export PATH=~/.local/bin:$PATH
 
 export PS1="\n\[\033[2;37m\]\h:\[\033[00m\]\w\n\$(git-prompt)\$\[\033[00m\] "
 
+# Set up Node Version Manager, if it's installed
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+
