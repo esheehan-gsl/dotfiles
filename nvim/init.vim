@@ -4,6 +4,7 @@
 
 " I love me some line numbers.
 set number
+set relativenumber
 
 " Decrease the update time to 100 milliseconds for vim-gitgutter
 set updatetime=100
