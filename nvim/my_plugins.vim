@@ -23,6 +23,7 @@ Plug 'niftylettuce/vim-jinja'
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Git
 Plug 'tpope/vim-fugitive'
