@@ -6,14 +6,6 @@
 	ci = commit --verbose
 	co = checkout
 	graph = log --graph --decorate --oneline
-	switch = !legit switch \"$@\"
-	branches = !legit branches
-	sprout = !legit sprout \"$@\"
-	unpublish = !legit unpublish \"$@\"
-	harvest = !legit harvest \"$@\"
-	sync = !legit sync \"$@\"
-	publish = !legit publish \"$@\"
-	graft = !legit graft \"$@\"
 [push]
 	default = simple
 [core]
