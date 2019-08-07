@@ -9,6 +9,7 @@ Plug 'tpope/vim-surround'
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
+Plug 'ekalinin/Dockerfile.vim'
 
 " LanguageServer completion
 Plug 'roxma/nvim-yarp'
@@ -18,6 +19,8 @@ Plug 'autozimu/languageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 
+Plug 'vim-scripts/indentpython.vim'
+Plug 'tmhedberg/SimpylFold'
 Plug 'niftylettuce/vim-jinja'
 
 " File / buffer navigation
