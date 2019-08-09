@@ -1,13 +1,17 @@
 INSTALL_DIR := $(XDG_CONFIG_DIR)/nvim
 
 CONFIG_FILES := $(foreach f,$(wildcard *.vim),$(INSTALL_DIR)/$f)
+SNIPPETS     := $(foreach f,$(wildcard snippets/*.snippets),$(INSTALL_DIR)/$f)
 PLUG         := $(INSTALL_DIR)/autoload/plug.vim
 
 .PHONY = all
 
-all : $(CONFIG_FILES) plugins_installed
+all : $(CONFIG_FILES) $(SNIPPETS) plugins_installed
 
 $(INSTALL_DIR)/%.vim : %.vim | $(INSTALL_DIR)
+	cp -v $? $@
+
+$(INSTALL_DIR)/snippets/%.snippets : snippets/%.snippets | $(INSTALL_DIR)/snippets
 	cp -v $? $@
 
 $(PLUG) : | $(INSTALL_DIR)/autoload
@@ -18,6 +22,9 @@ plugins_installed : my_plugins.vim $(PLUG)
 	nvim --headless +PlugUpgrade +qall
 	nvim --headless +PlugClean! +PlugInstall! +PlugUpdate! +UpdateRemotePlugins! +qall
 	touch $@
+
+$(INSTALL_DIR)/snippets :
+	mkdir -p $@
 
 $(INSTALL_DIR)/autoload :
 	mkdir -p $@

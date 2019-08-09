@@ -1,0 +1,13 @@
+snippet test
+	def test_${1:name}(self):
+		"""${2:description}"""
+
+		# Arrange
+		subject = ${3:subject}
+
+		# Act
+		result = ${4:subject()}
+
+		# Assert
+		${0:self.fail()}
+

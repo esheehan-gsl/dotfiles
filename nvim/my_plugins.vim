@@ -11,6 +11,11 @@ Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
 Plug 'ekalinin/Dockerfile.vim'
 
+" Snippets
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
+
 " LanguageServer completion
 Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2'
