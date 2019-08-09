@@ -75,3 +75,8 @@ colorscheme OceanicNext
 let g:airline_theme='oceanicnext'
 " }}}
 
+" Local configuration {{{
+if filereadable(expand("~/.config/nvim/local.vim"))
+  source ~/.config/nvim/local.vim
+endif
+" }}}
