@@ -3,7 +3,7 @@ SHELL = /bin/sh
 XDG_CONFIG_DIR ?= ~/.config
 XDG_LOCAL_DIR  ?= ~/.local
 
-XDG_CONFIGS =
+XDG_CONFIGS = alacritty/alacritty.yml
 
 # List of all dotfiles that in live in the home directory
 HOMEFILES = $(patsubst home/%,~/.%,$(wildcard home/*))
@@ -33,6 +33,10 @@ all : $(HOMEFILES) $(SCRIPTS) \
 
 ~/.local/bin :
 	mkdir -p ~/.local/bin
+
+$(XDG_CONFIG_DIR)/% :
+	mkdir -p $(@D)
+	cp -r $* $@
 
 $(XDG_CONFIG_DIR)/logrotate.conf :
 	cp logrotate.conf $@
