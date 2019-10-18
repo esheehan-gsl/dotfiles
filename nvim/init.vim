@@ -24,7 +24,11 @@ source ~/.config/nvim/my_plugins.vim
 " good behavior with tmux splits
 autocmd VimResized * :wincmd =
 
-map <C-k><C-b> :NERDTreeToggle<CR>
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+
+" Close vim if the only window open is a NERDTree
+autocmd BufEnter * if (winnr("$") == 1 && exists("B:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 let g:ctrlp_custom_ignore = {
   \ 'dir': 'node_modules',
