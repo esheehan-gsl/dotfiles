@@ -1,6 +1,5 @@
 [user]
 	name = W. Evan Sheehan
-	email = 52247+darthmall@users.noreply.github.com
 [alias]
 	st = status -s -b
 	ci = commit --verbose
