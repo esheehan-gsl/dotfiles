@@ -25,6 +25,7 @@ Plug 'autozimu/languageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 
+Plug 'vim-python/python-syntax'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'niftylettuce/vim-jinja'
