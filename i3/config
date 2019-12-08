@@ -37,6 +37,9 @@ client.placeholder       #000000  $base00  $base05	#000000    $base00
 
 client.background	$base02
 
+focus_follows_mouse no
+mouse_warping none
+
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
