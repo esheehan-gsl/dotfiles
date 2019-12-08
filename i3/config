@@ -67,7 +67,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 # kill focused window
 bindsym $mod+Shift+q kill
 
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+# launcher
+bindsym $mod+d exec --no-startup-id "rofi -show combi -modi combi -combi-modi 'run,drun,window' -font 'Inter 16' -lines 6 -show-icons -width 100 -padding 800 -eh 2"
 
 # change focus
 bindsym $mod+h focus left
