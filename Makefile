@@ -3,7 +3,7 @@ SHELL = /bin/sh
 XDG_CONFIG_DIR ?= ~/.config
 XDG_LOCAL_DIR  ?= ~/.local
 
-XDG_CONFIGS = alacritty/alacritty.yml
+XDG_CONFIGS = alacritty i3
 
 # List of all dotfiles that in live in the home directory
 HOMEFILES = $(patsubst home/%,~/.%,$(wildcard home/*))
