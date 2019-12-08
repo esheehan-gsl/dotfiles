@@ -189,7 +189,7 @@ bar {
 		inactive_workspace	$base00 $base00 $base04
 	}
 
-  status_command i3status
+  status_command i3blocks -c ~/.config/i3/i3blocks.conf
 }
 
 exec compton --fading --fade-delta=5
