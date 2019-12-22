@@ -1,4 +1,6 @@
-- [ ] Configure i3 bar with graphs (Conky?)
+- [ ] Configure Nordic as GTK theme
+- [ ] Configure status overlay with Conky
+- [ ] Lock screen with current time
 - [ ] Autocomplete for tmux sessions
 - [ ] Auto-install fonts
 - [ ] Use XResources as primary config
