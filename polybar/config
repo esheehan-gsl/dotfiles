@@ -18,7 +18,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #343D46
+background = #1B2B34
 background-alt = #4F5B66
 ;foreground = ${xrdb:color7:#222}
 foreground = #CDD3DE
@@ -30,9 +30,10 @@ alert = #F99157
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 27
+height = 32
 radius = 0
-fixed-center = false
+fixed-center = true
+dpi = 0
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -50,7 +51,7 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = Inter:style=Regular:size=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;1
 font-2 = Font Awesome 5 Free:style=solid:size=10;1
 font-3 = Inter:style=Bold:size=10;1
 font-4 = Fira Code:style=Medium:size=10;1
@@ -76,8 +77,6 @@ wm-restack = i3
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-enable-ipc = true
 
 [module/xwindow]
 type = internal/xwindow
@@ -144,7 +143,7 @@ label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
-label-focused-background = ${colors.background-alt}
+label-focused-background = ${colors.background}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
