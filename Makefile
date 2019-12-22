@@ -3,7 +3,13 @@ SHELL = /bin/sh
 XDG_CONFIG_DIR ?= ~/.config
 XDG_LOCAL_DIR  ?= ~/.local
 
-XDG_CONFIGS = alacritty i3
+# Configs that follow the XDG base directory spec
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
+XDG_CONFIGS = alacritty/alacritty.yml \
+			  compton.conf \
+			  i3/config \
+			  polybar/config \
+			  polybar/launch.sh
 
 # List of all dotfiles that in live in the home directory
 HOMEFILES = $(patsubst home/%,~/.%,$(wildcard home/*))
@@ -50,9 +56,6 @@ $(XDG_LOCAL_DIR)/lib/% :
 installed/oceanic-next-gnome-terminal : | installed
 	./oceanic-next-gnome-terminal/oceanic-next.bash
 	touch $@
-
-# Config that follow the XDG base directory spec
-# https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 
 delegates : */Makefile
 	for DELEGATE in $(^D); do \

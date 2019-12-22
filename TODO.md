@@ -2,7 +2,7 @@
 - [ ] Autocomplete for tmux sessions
 - [ ] Auto-install fonts
 - [ ] Use XResources as primary config
-- [ ] Fix Makefile so that it correctly updates directories like ~/.config/i3 (instead of creating ~/.config/i3/i3/)
 - [ ] Set up Oceanic Next colors
+- [x] Fix Makefile so that it correctly updates directories like ~/.config/i3 (instead of creating ~/.config/i3/i3/)
 - [x] Auto-install vim packages
 - [x] Add compton config
