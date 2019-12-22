@@ -49,20 +49,22 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = Inter:style=Regular:size=10;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-2 = Font Awesome 5 Free:style=solid:size=10;1
+font-3 = Inter:style=Bold:size=10;1
+font-4 = Fira Code:style=Medium:size=10;1
 
 modules-left = i3
 modules-center = xwindow mpd
-modules-right = filesystem xkeyboard memory cpu temperature date powermenu
+modules-right = filesystem memory cpu temperature enp0s31f6 date xkeyboard
 
 tray-position = right
 tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -75,6 +77,8 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+enable-ipc = true
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -83,12 +87,11 @@ label = %title:0:30:...%
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
+format-prefix = " "
+format-prefix-font = 3
 format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -101,9 +104,30 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
+format-mounted = <label-mounted> <bar-used>
+format-mounted-prefix = 
+format-mounted-prefix-font = 3
+format-mounted-prefix-foreground = #65737E
+format-mounted-prefix-padding = 2
+
+format-unmounted = <label-unmounted>
+format-unmounted-prefix-font = 3
+format-unmounted-prefix-padding = 2
+
+label-mounted = %{T5}%mountpoint%%{T-}
+label-unmounted = %{T5}%mountpoint%%{T-} not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
+bar-used-width = 10
+bar-used-indicator = ▊
+bar-used-indicator-font = 2
+bar-used-indicator-foreground = #99C794
+bar-used-fill = ▊
+bar-used-fill-font = 2
+bar-used-fill-foreground = #99C794
+bar-used-empty = ▊
+bar-used-empty-font = 2
+bar-used-empty-foreground = #4F5B66
 
 [module/i3]
 type = internal/i3
@@ -177,103 +201,79 @@ bar-empty-foreground = ${colors.foreground-alt}
 type = internal/cpu
 interval = 0.5
 
-format = <label> <ramp-coreload>
-format-background = #66cc99
-format-foreground = #2a5c45
-format-underline = #60eaa5
-format-overline = #60eaa5
-format-padding = 2
+format = <ramp-coreload>
 
-label = cpu
-label-font = 1
+format-prefix = 
+format-prefix-font = 3
+format-prefix-foreground = #65737E
+format-prefix-padding = 2
 
 ramp-coreload-0 = ▁
 ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = #000000
+ramp-coreload-0-foreground = #4F5B66
 ramp-coreload-1 = ▂
 ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = #000000
+ramp-coreload-1-foreground = #6699CC
 ramp-coreload-2 = ▃
 ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = #000000
+ramp-coreload-2-foreground = #6699CC
 ramp-coreload-3 = ▄
 ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = #000000
+ramp-coreload-3-foreground = #6699CC
 ramp-coreload-4 = ▅
 ramp-coreload-4-font = 2
-ramp-coreload-4-foreground = #ffffff
+ramp-coreload-4-foreground = #F99157
 ramp-coreload-5 = ▆
 ramp-coreload-5-font = 2
-ramp-coreload-5-foreground = #ffffff
+ramp-coreload-5-foreground = #F99157
 ramp-coreload-6 = ▇
 ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff3b51
+ramp-coreload-6-foreground = #EC5f67
 ramp-coreload-7 = █
 ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff3b51
+ramp-coreload-7-foreground = #EC5f67
 
 [module/memory]
 type = internal/memory
 interval = 2
-format = <label> <ramp-coreload>
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used%%
 
-[module/wlan]
+format = <bar-used>
+format-prefix = 
+format-prefix-font = 3
+format-prefix-foreground = #65737E
+format-prefix-padding = 2
+
+bar-used-width = 10
+bar-used-indicator = ▊
+bar-used-indicator-font = 2
+bar-used-indicator-foreground = #6699CC
+bar-used-fill = ▊
+bar-used-fill-font = 2
+bar-used-fill-foreground = #6699CC
+bar-used-empty = ▊
+bar-used-empty-font = 2
+bar-used-empty-foreground = #4F5B66
+
+[module/enp0s31f6]
 type = internal/network
-interface = net1
+interface = enp0s31f6
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
-label-connected = %essid%
+format-connected = <label-connected>
+label-connected = %{F#65737E} %upspeed%%{F-}  %downspeed%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
-
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
-[module/eth]
-type = internal/network
-interface = ens2
-interval = 3.0
-
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = ${colors.foreground-alt}
-label-connected = %local_ip%
-
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected = <label-disconnected>
+label-disconnected =  %ifname%
 
 [module/date]
 type = internal/date
 interval = 5
 
-date =
-date-alt = " %Y-%m-%d"
+date = %%{F#65737E}%e %%{T4}%b%%{T-} %Y%%{F-}
+time = %%{T4}%H:%M%%{F-}
 
-time = %H:%M
-time-alt = %H:%M:%S
-
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
-
-label = %date% %time%
+label = %date%  %time%
+format-margin = 8
 
 [module/pulseaudio]
 type = internal/pulseaudio
@@ -369,47 +369,18 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = 
+ramp-1 = 
+ramp-2 = 
+ramp-font = 3
 ramp-foreground = ${colors.foreground-alt}
 
-[module/powermenu]
-type = custom/menu
-
-expand-right = true
-
-format-spacing = 1
-
-label-open = 
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
-label-close-foreground = ${colors.secondary}
-label-separator = |
-label-separator-foreground = ${colors.foreground-alt}
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = sudo reboot
-
-menu-2-0 = power off
-menu-2-0-exec = sudo poweroff
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true

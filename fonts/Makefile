@@ -1,9 +1,9 @@
 
 INSTALL_DIR := $(XDG_LOCAL_DIR)/share/fonts
 
-FONTS := $(addprefix $(INSTALL_DIR)/, $(notdir $(wildcard Hack/build/ttf/*.ttf FiraCode/distr/otf/*.otf)))
+FONTS := $(addprefix $(INSTALL_DIR)/, $(notdir $(wildcard Hack/build/ttf/*.ttf FiraCode/distr/otf/*.otf FontAwesome/*.otf)))
 
-VPATH = FiraCode/distr/otf Hack/build/ttf
+VPATH = FiraCode/distr/otf Hack/build/ttf FontAwesome
 
 .PHONY = all
 
