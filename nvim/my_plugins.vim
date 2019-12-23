@@ -1,5 +1,6 @@
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
+Plug 'arcticicestudio/nord-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'hhsnopek/vim-firewatch'
 
