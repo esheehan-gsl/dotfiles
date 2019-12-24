@@ -1,10 +1,9 @@
 - [ ] Auto-install fonts
-- [ ] Use XResources as primary config
 - [ ] Configure Nordic as GTK theme
 - [ ] Configure status overlay with Conky
 - [ ] Lock screen with current time
 - [ ] Autocomplete for tmux sessions
-- [ ] Set up Oceanic Next colors
+- [x] Use XResources as primary config
 - [x] Fix Makefile so that it correctly updates directories like ~/.config/i3 (instead of creating ~/.config/i3/i3/)
 - [x] Auto-install vim packages
 - [x] Add compton config
