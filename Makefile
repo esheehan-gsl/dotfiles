@@ -12,7 +12,15 @@ XDG_CONFIGS = alacritty/alacritty.yml \
 			  polybar/launch.sh
 
 # List of all dotfiles that in live in the home directory
-HOMEFILES = $(patsubst home/%,~/.%,$(wildcard home/*))
+HOMEFILES = ~/.bash_aliases \
+			~/.bashrc \
+			~/.gitconfig \
+			~/.tmux.conf \
+			~/.Xmodmap \
+			~/.Xresources \
+			~/.zshrc
+
+XRESOURCES = ~/.Xresources.d/nord
 
 # List of all local user scripts
 SCRIPTS = $(foreach f,$(wildcard bin/*),~/.local/$(f))
@@ -29,8 +37,21 @@ all : $(HOMEFILES) $(SCRIPTS) \
 	delegates \
 	installed/oceanic-next-gnome-terminal
 
+~/.Xresources : $(XRESOURCES)
+	cp Xresources $@
+	xrdb -merge ~/.Xresources
+
+~/.Xresources.d/% : %
+	cp -v $? $%@
+
+~/.Xresources.d :
+	mkdir -p $@
+	touch $@/local
+
+$(XRESOURCES) : | ~/.Xresources.d
+
 # Copy home files into the home directory
-~/.% : home/%
+~/.% : %
 	cp -v $? $@
 
 # Useful scripts
