@@ -7,6 +7,7 @@ XDG_LOCAL_DIR  ?= ~/.local
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
 XDG_CONFIGS = alacritty/alacritty.yml \
 			  compton.conf \
+			  gtk-3.0/settings.ini \
 			  i3/config \
 			  polybar/config \
 			  polybar/launch.sh
@@ -15,6 +16,7 @@ XDG_CONFIGS = alacritty/alacritty.yml \
 HOMEFILES = ~/.bash_aliases \
 			~/.bashrc \
 			~/.gitconfig \
+			~/.gtkrc-2.0 \
 			~/.tmux.conf \
 			~/.Xmodmap \
 			~/.Xresources \
