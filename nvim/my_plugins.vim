@@ -6,6 +6,7 @@ Plug 'hhsnopek/vim-firewatch'
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
+Plug 'tpope/vim-commentary'
 
 Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
