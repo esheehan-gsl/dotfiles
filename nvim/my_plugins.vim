@@ -12,7 +12,6 @@ Plug 'mattn/emmet-vim'
 Plug 'othree/html5.vim'
 Plug 'othree/yajs.vim'
 Plug 'ekalinin/Dockerfile.vim'
-Plug 'leafgarland/typescript-vim'
 
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
