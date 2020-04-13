@@ -35,6 +35,9 @@ Plug 'niftylettuce/vim-jinja'
 " this tag
 Plug 'psf/black', { 'tag': '19.10b0' }
 
+" JS/CSS/HTML
+Plug 'prettier/vim-prettier'
+
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
