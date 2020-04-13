@@ -42,8 +42,14 @@ let g:ctrlp_custom_ignore = {
 
 " Folding {{{
 set foldenable
-set foldlevel=1
+set foldlevel=99
 set foldmethod=syntax
+
+" Toggle folds with space
+nnoremap <space> za
+
+" SimpylFold
+let g:SimpylFold_docstring_preview = 1
 " }}}
 
 " Undo {{{
