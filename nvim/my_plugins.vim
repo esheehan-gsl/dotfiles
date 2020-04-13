@@ -26,10 +26,14 @@ Plug 'autozimu/languageClient-neovim', {
   \ 'do': 'bash install.sh',
   \ }
 
+" Python
 Plug 'vim-python/python-syntax'
 Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'niftylettuce/vim-jinja'
+" Until https://github.com/psf/black/issues/1304 is fixed I need to pin Black to
+" this tag
+Plug 'psf/black', { 'tag': '19.10b0' }
 
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
