@@ -105,3 +105,9 @@ if type "peco" > /dev/null && type "fd" > /dev/null; then
   zle -N peco-src
   bindkey '^]' peco-src
 fi
+
+# See https://gnunn1.github.io/tilix-web/manual/vteconfig/ for an explanation
+# Using a login shell in Tilix didn't fix this for me
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+  source /etc/profile.d/vte.sh
+fi
