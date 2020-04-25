@@ -86,7 +86,7 @@ endif
 syntax enable
 let g:oceanic_next_terminal_bold = 1
 let g:oceanic_next_terminal_italic = 1
-colorscheme nord
+colorscheme OceanicNext
 
 let g:python_highlight_all = 1
 let g:airline_theme='nord'
