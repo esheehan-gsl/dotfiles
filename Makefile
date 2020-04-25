@@ -5,21 +5,13 @@ XDG_LOCAL_DIR  ?= ~/.local
 
 # Configs that follow the XDG base directory spec
 # https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html
-XDG_CONFIGS = alacritty/alacritty.yml \
-			  compton.conf \
-			  gtk-3.0/settings.ini \
-			  i3/config \
-			  polybar/config \
-			  polybar/launch.sh
+XDG_CONFIGS = alacritty/alacritty.yml
 
 # List of all dotfiles that in live in the home directory
 HOMEFILES = ~/.bash_aliases \
 			~/.bashrc \
 			~/.gitconfig \
-			~/.gtkrc-2.0 \
 			~/.tmux.conf \
-			~/.Xmodmap \
-			~/.Xresources \
 			~/.zshrc
 
 XRESOURCES = ~/.Xresources.d/nord
@@ -27,30 +19,19 @@ XRESOURCES = ~/.Xresources.d/nord
 # List of all local user scripts
 SCRIPTS = $(foreach f,$(wildcard bin/*),~/.local/$(f))
 
-LOGDIRS = backups
-
-.PHONY = all delegates
+.PHONY = all delegates vim
 
 all : $(HOMEFILES) $(SCRIPTS) \
 	$(foreach c,$(XDG_CONFIGS),$(XDG_CONFIG_DIR)/$(c)) \
-	$(foreach c,$(LOGDIRS),$(XDG_LOCAL_DIR)/logs/$(c)) \
 	$(XDG_CONFIG_DIR)/logrotate.conf \
 	$(XDG_LOCAL_DIR)/lib/logrotate \
 	delegates \
 	installed/oceanic-next-gnome-terminal
 
-~/.Xresources : $(XRESOURCES)
-	cp Xresources $@
-	xrdb -merge ~/.Xresources
-
-~/.Xresources.d/% : %
-	cp -v $? $%@
-
-~/.Xresources.d :
-	mkdir -p $@
-	touch $@/local
-
-$(XRESOURCES) : | ~/.Xresources.d
+vim : nvim/Makefile
+	${MAKE} -C nvim/ \
+		-e XDG_CONFIG_DIR=$(XDG_CONFIG_DIR) \
+		-e XDG_LOCAL_DIR=$(XDG_LOCAL_DIR); \
 
 # Copy home files into the home directory
 ~/.% : %
@@ -69,9 +50,6 @@ $(XDG_CONFIG_DIR)/% :
 
 $(XDG_CONFIG_DIR)/logrotate.conf :
 	cp logrotate.conf $@
-
-$(XDG_LOCAL_DIR)/logs/% :
-	mkdir -p $@
 
 $(XDG_LOCAL_DIR)/lib/% :
 	mkdir -p $@
