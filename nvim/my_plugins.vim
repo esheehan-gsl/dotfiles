@@ -41,7 +41,6 @@ Plug 'prettier/vim-prettier'
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'christoomey/vim-tmux-navigator'
 
 " Git
 Plug 'tpope/vim-fugitive'
