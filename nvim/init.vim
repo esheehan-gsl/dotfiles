@@ -26,10 +26,6 @@ nnoremap ]Q :clast<CR>
 " Plugins
 source ~/.config/nvim/my_plugins.vim
 
-" Automatically resize splits when the window is resized. Important for
-" good behavior with tmux splits
-autocmd VimResized * :wincmd =
-
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 
