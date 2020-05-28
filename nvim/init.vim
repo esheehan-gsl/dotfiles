@@ -90,6 +90,10 @@ let g:airline_theme='oceanicnext'
 au BufReadPost *.svelte set syntax=html
 " }}}
 
+" Airline {{{
+let g:airline_section_z = '☰ %l/%L  : %c'
+" }}}
+
 " Local configuration {{{
 if filereadable(expand("~/.config/nvim/local.vim"))
   source ~/.config/nvim/local.vim
