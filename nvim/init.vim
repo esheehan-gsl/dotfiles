@@ -17,6 +17,12 @@ set ignorecase smartcase
 " Just because it's a terminal doesn't mean I can't use a mouse
 set mouse=a
 
+" Exclude project cruft from auto-complete/ctrl-p
+set wildignore+=*/.git/*,*/node_modules/*
+set wildignore+=*/dist/*,*/_site/*
+set wildignore+=*.pyc,*.min.js
+set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.JPEG,*.jpeg,*.GIF,*.gif,*.pdf,*.PDF,*.mov,*.mp4
+
 " Add some keybindings for the quickfix window
 nnoremap [q :cprev<CR>
 nnoremap ]q :cnext<CR>
