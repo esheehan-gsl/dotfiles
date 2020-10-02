@@ -23,8 +23,6 @@ SCRIPTS = $(foreach f,$(wildcard bin/*),~/.local/$(f))
 
 all : $(HOMEFILES) $(SCRIPTS) \
 	$(foreach c,$(XDG_CONFIGS),$(XDG_CONFIG_DIR)/$(c)) \
-	$(XDG_CONFIG_DIR)/logrotate.conf \
-	$(XDG_LOCAL_DIR)/lib/logrotate \
 	delegates \
 	installed/oceanic-next-gnome-terminal
 
