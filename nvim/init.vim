@@ -71,12 +71,9 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+colorscheme base16-grayscale-light
 
 let g:python_highlight_all = 1
-let g:airline_theme='oceanicnext'
 
 au BufReadPost *.svelte set syntax=html
 " }}}

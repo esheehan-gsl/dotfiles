@@ -1,9 +1,7 @@
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'arcticicestudio/nord-vim'
-Plug 'mhartington/oceanic-next'
-Plug 'hhsnopek/vim-firewatch'
+Plug 'chriskempson/base16-vim'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
