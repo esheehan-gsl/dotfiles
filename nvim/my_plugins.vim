@@ -1,16 +1,16 @@
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
+" Color
 Plug 'arcticicestudio/nord-vim'
 Plug 'mhartington/oceanic-next'
 Plug 'hhsnopek/vim-firewatch'
 
+" Misc.
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
-Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'othree/yajs.vim'
+" Docker syntax
 Plug 'ekalinin/Dockerfile.vim'
 
 " Snippets
@@ -35,15 +35,21 @@ Plug 'niftylettuce/vim-jinja'
 " this tag
 Plug 'psf/black', { 'tag': '19.10b0' }
 
+" JS/CSS/HTML
+Plug 'prettier/vim-prettier'
+Plug 'mattn/emmet-vim'
+Plug 'othree/html5.vim'
+Plug 'othree/yajs.vim'
+
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree'
-Plug 'christoomey/vim-tmux-navigator'
 
 " Git
 Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
+" Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
