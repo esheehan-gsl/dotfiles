@@ -62,21 +62,6 @@ set undolevels=10000
 set undoreload=1000
 " }}}
 
-" Code Completion {{{
-" Enable ncm2 in all buffers
-autocmd BufEnter * call ncm2#enable_for_buffer()
-
-set completeopt=noinsert,menuone,noselect
-
-let g:LanguageClient_serverCommands = {
-  \ 'javascript': ['javascript-typescript-stdio'],
-  \ 'python': ['pyls']
-  \ }
-
-inoremap <C-space> <C-O>:call LanguageClient#textDocument_completion()<CR>
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-" }}}
-
 " Colors {{{
 
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1

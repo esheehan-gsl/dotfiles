@@ -18,14 +18,6 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 
-" LanguageServer completion
-Plug 'roxma/nvim-yarp'
-Plug 'ncm2/ncm2'
-Plug 'autozimu/languageClient-neovim', {
-  \ 'branch': 'next',
-  \ 'do': 'bash install.sh',
-  \ }
-
 " Python
 Plug 'vim-python/python-syntax'
 Plug 'vim-scripts/indentpython.vim'
