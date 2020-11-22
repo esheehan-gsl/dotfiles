@@ -100,6 +100,10 @@ au BufReadPost *.svelte set syntax=html
 let g:airline_section_z = '☰ %l/%L  : %c'
 " }}}
 
+" Black {{{
+" Run black before save
+autocmd BufWritePre *.py execute ':Black'
+" }}}
 " Local configuration {{{
 if filereadable(expand("~/.config/nvim/local.vim"))
   source ~/.config/nvim/local.vim
