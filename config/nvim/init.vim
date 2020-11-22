@@ -2,32 +2,16 @@
 " Description: NeoVim configuration
 " vim: set fdm=marker fdl=0 ts=2 sw=2 et tw=80 :
 
-" I love me some line numbers.
-set number
-set relativenumber
-
-" Decrease the update time to 100 milliseconds for vim-gitgutter
-set updatetime=100
-
-set noswapfile
-
-" Ignore case as long as the query contains no capital letters.
-set ignorecase smartcase
-
-" Just because it's a terminal doesn't mean I can't use a mouse
-set mouse=a
+" Load the basic vim configuration from .vimrc. I keep some basic set up like
+" line numbers in the old ~/.vimrc location for any time I end up not having
+" access to NeoVim.
+source ~/.vimrc
 
 " Exclude project cruft from auto-complete/ctrl-p
 set wildignore+=*/.git/*,*/node_modules/*
 set wildignore+=*/dist/*,*/_site/*
 set wildignore+=*.pyc,*.min.js
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.JPEG,*.jpeg,*.GIF,*.gif,*.pdf,*.PDF,*.mov,*.mp4
-
-" Add some keybindings for the quickfix window
-nnoremap [q :cprev<CR>
-nnoremap ]q :cnext<CR>
-nnoremap [Q :cfirst<CR>
-nnoremap ]Q :clast<CR>
 
 " Plugins
 source ~/.config/nvim/my_plugins.vim
