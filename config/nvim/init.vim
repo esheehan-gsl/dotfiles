@@ -7,12 +7,6 @@
 " access to NeoVim.
 source ~/.vimrc
 
-" Exclude project cruft from auto-complete/ctrl-p
-set wildignore+=*/.git/*,*/node_modules/*
-set wildignore+=*/dist/*,*/_site/*
-set wildignore+=*.pyc,*.min.js
-set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.JPEG,*.jpeg,*.GIF,*.gif,*.pdf,*.PDF,*.mov,*.mp4
-
 " Plugins {{{
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
@@ -49,7 +43,6 @@ Plug 'othree/yajs.vim'
 
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
-Plug 'scrooloose/nerdtree'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -58,14 +51,17 @@ Plug 'airblade/vim-gitgutter'
 " Statusline
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"}}}
 
 call plug#end()
-" NERDTree
-map <C-n> :NERDTreeToggle<CR>
+"}}}
 
-" Close vim if the only window open is a NERDTree
-autocmd BufEnter * if (winnr("$") == 1 && exists("B:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Ignore {{{
+" Exclude project cruft from auto-complete/ctrl-p
+set wildignore+=*/.git/*,*/node_modules/*
+set wildignore+=*/dist/*,*/_site/*
+set wildignore+=*.pyc,*.min.js
+set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.JPEG,*.jpeg,*.GIF,*.gif,*.pdf,*.PDF,*.mov,*.mp4
+"}}}
 
 " Folding {{{
 set foldenable
@@ -88,7 +84,6 @@ set undoreload=1000
 " }}}
 
 " Colors {{{
-
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 if (has("termguicolors"))
