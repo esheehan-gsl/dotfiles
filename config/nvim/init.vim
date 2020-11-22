@@ -67,10 +67,6 @@ map <C-n> :NERDTreeToggle<CR>
 " Close vim if the only window open is a NERDTree
 autocmd BufEnter * if (winnr("$") == 1 && exists("B:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-let g:ctrlp_custom_ignore = {
-  \ 'dir': 'node_modules',
-  \ }
-
 " Folding {{{
 set foldenable
 set foldlevel=99
