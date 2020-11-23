@@ -1,17 +1,17 @@
 font:
   normal:
-    family: Hack
+    family: iA Writer Mono S
     style: Regular
   bold:
-    family: Hack
+    family: iA Writer Mono S
     style: Bold
   italic:
-    family: Hack
+    family: iA Writer Mono S
     style: Italic
   bold_italic:
-    family: Hack
+    family: iA Writer Mono S
     style: Italic
-  size: 11.0
+  size: 12.0
   #
 # Base16 Grayscale Light - alacritty color config
 # Alexandre Gavioli (https://github.com/Alexx2/)
