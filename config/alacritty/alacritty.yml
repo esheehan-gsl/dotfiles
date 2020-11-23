@@ -12,6 +12,8 @@ font:
     family: iA Writer Mono S
     style: Italic
   size: 12.0
+  offset:
+    y: 2
   #
 # Base16 Grayscale Light - alacritty color config
 # Alexandre Gavioli (https://github.com/Alexx2/)
