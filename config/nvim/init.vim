@@ -109,6 +109,10 @@ let g:airline_section_z = '☰ %l/%L  : %c'
 autocmd BufWritePre *.py execute ':Black'
 " }}}
 
+" Prettier {{{
+let g:prettier#autoformat_config_present = 1
+" }}}
+
 " Experimental writing mode {{{
 let s:wm_enabled = 0
 let s:margin_ids = []
