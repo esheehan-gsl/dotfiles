@@ -12,14 +12,12 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
 Plug 'chriskempson/base16-vim'
+Plug 'sheerun/vim-polyglot'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
-
-" Docker syntax
-Plug 'ekalinin/Dockerfile.vim'
 
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
@@ -27,17 +25,12 @@ Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 
 " Python
-Plug 'vim-python/python-syntax'
-Plug 'vim-scripts/indentpython.vim'
 Plug 'tmhedberg/SimpylFold'
-Plug 'niftylettuce/vim-jinja'
 Plug 'psf/black', { 'branch': 'stable' }
 
 " JS/CSS/HTML
-Plug 'prettier/vim-prettier'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'mattn/emmet-vim'
-Plug 'othree/html5.vim'
-Plug 'othree/yajs.vim'
 
 " File / buffer navigation
 Plug 'kien/ctrlp.vim'
