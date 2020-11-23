@@ -9,9 +9,11 @@ HOMEFILES = ~/.bashrc \
 # List of all local user scripts
 SCRIPTS = $(foreach f,$(wildcard local/bin/*),~/.$(f))
 
+VIMSNIPPETS = $(foreach f,$(wildcard config/nvim/snippets/*),~/.$(f))
+
 .PHONY = all delegates vim
 
-all : $(HOMEFILES) $(SCRIPTS) \
+all : $(HOMEFILES) $(SCRIPTS) $(VIMSNIPPETS) \
 	~/.config/alacritty/alacritty.yml \
 	~/.config/nvim/init.vim
 
@@ -33,6 +35,12 @@ all : $(HOMEFILES) $(SCRIPTS) \
 ~/.config/nvim/autoload/plug.vim : | ~/.config
 	mkdir -p ~/.config/nvim/autoload
 	wget https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim -O $@
+
+~/.config/nvim/snippets/% : config/nvim/snippets/% | ~/.config/nvim/snippets
+	cp -v $? $@
+
+~/.config/nvim/snippets :
+	mkdir -p $@
 
 ~/.config :
 	mkdir -p ~/.config
