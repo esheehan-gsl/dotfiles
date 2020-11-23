@@ -6,6 +6,12 @@
 set number
 set relativenumber
 
+" Center the cursor
+set scrolloff=999
+
+" Highlight the line with the cursor
+set cursorline
+
 " Decrease the update time to 100 milliseconds for vim-gitgutter
 set updatetime=100
 
