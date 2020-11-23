@@ -19,6 +19,10 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
 
+" Distraction-free writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
+
 " Snippets
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
@@ -106,44 +110,9 @@ autocmd BufWritePre *.py execute ':Black'
 let g:prettier#autoformat_config_present = 1
 " }}}
 
-" Experimental writing mode {{{
-let s:wm_enabled = 0
-let s:margin_ids = []
-function! ToggleWritingMode()
-  let l:margin = &textwidth > 0 ? float2nr((winwidth(0) - &textwidth) / 2 - 1) : 0
-  if (s:wm_enabled == 0)
-    set laststatus=0
-    set norelativenumber
-
-    if (l:margin > 0)
-      execute "silent leftabove " . l:margin . " vsplit new"
-      let s:margin_ids = add(s:margin_ids, win_getid())
-      execute "wincmd l"
-
-      execute "silent rightbelow " . l:margin . " vsplit new"
-      let s:margin_ids = add(s:margin_ids, win_getid())
-      execute "wincmd h"
-
-      for key in ['NonText', 'VertSplit', 'StatusLine', 'StatusLineNC']
-        call Base16hi(key, g:base16_gui00, g:base16_gui00, "", "")
-      endfor
-    endif
-
-    let s:wm_enabled = 1
-  else
-    for winid in s:margin_ids
-      execute win_id2win(winid) . "close"
-    endfor
-
-    set laststatus=2
-    set relativenumber
-
-    let s:wm_enabled = 0
-    let s:margin_ids = []
-  endif
-endfunction
-
-nmap <silent> <Leader>z :call ToggleWritingMode()<CR>
+" Goyo / Limelight {{{
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 " }}}
 
 " Local configuration {{{
