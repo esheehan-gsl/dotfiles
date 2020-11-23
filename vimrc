@@ -22,6 +22,10 @@ set ignorecase smartcase
 " Just because it's a terminal doesn't mean I can't use a mouse
 set mouse=a
 
+" Useful keybindings
+
+let mapleader=";"
+
 " Add some keybindings for the quickfix window
 nnoremap [q :cprev<CR>
 nnoremap ]q :cnext<CR>
