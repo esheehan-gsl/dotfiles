@@ -100,7 +100,7 @@ if command -v pyenv 1>/dev/null 2>&1; then
 fi
 
 function peco-src () {
-  local selected_dir=$(fd --hidden '\.git$' "$HOME/Code" -x dirname {} | sort | uniq | peco --query "$LBUFFER")
+  local selected_dir=$(fdfind --hidden '\.git$' "$HOME/Code" -x dirname {} | sort | uniq | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
     BUFFER="cd ${selected_dir}"
     zle accept-line
@@ -108,7 +108,7 @@ function peco-src () {
   zle clear-screen
 }
 
-if type "peco" > /dev/null && type "fd" > /dev/null; then
+if type "peco" > /dev/null && type "fdfind" > /dev/null; then
   zle -N peco-src
   bindkey '^]' peco-src
 fi
