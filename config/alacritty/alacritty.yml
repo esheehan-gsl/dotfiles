@@ -1,15 +1,15 @@
 font:
   normal:
-    family: iA Writer Mono S
+    family: Fira Mono
     style: Regular
   bold:
-    family: iA Writer Mono S
+    family: Fira Mono
     style: Bold
   italic:
-    family: iA Writer Mono S
+    family: Fira Mono
     style: Italic
   bold_italic:
-    family: iA Writer Mono S
+    family: Fira Mono
     style: Italic
   size: 12.0
   offset:
