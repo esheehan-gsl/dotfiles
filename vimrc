@@ -3,6 +3,7 @@
 " vim: set fdm=marker fdl=0 ts=2 sw=2 et tw=80 :
 
 " I love me some line numbers.
+set number
 set relativenumber
 
 " Center the cursor
