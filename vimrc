@@ -25,7 +25,7 @@ set mouse=a
 
 " Useful keybindings
 
-let mapleader=";"
+let mapleader=","
 
 " Add some keybindings for the quickfix window
 nnoremap [q :cprev<CR>
