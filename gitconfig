@@ -12,3 +12,5 @@
   editor = $EDITOR
 [diff]
   submodule = log
+[config]
+  rebase = false
