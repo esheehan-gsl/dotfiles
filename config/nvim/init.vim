@@ -54,10 +54,12 @@ call plug#end()
 
 " Ignore {{{
 " Exclude project cruft from auto-complete/ctrl-p
-set wildignore+=*/.git/*,*/node_modules/*
-set wildignore+=*/dist/*,*/_site/*
 set wildignore+=*.pyc,*.min.js
 set wildignore+=*.png,*.PNG,*.JPG,*.jpg,*.JPEG,*.jpeg,*.GIF,*.gif,*.pdf,*.PDF,*.mov,*.mp4
+
+" Ignore these in ctrl-p, but not wildignore so I can still autocomplete them
+" with :e
+let g:ctrlp_custom_ignore = '\v\.git|node_modules|build|dist|_site|tmp'
 "}}}
 
 " Folding {{{
