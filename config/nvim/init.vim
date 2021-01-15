@@ -12,6 +12,7 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
 Plug 'chriskempson/base16-vim'
+Plug 'atelierbram/Base2Tone-vim'
 Plug 'sheerun/vim-polyglot'
 
 " Misc.
@@ -87,7 +88,10 @@ if (has("termguicolors"))
 endif
 
 syntax enable
-colorscheme base16-grayscale-light
+set background=dark
+colorscheme Base2Tone_MorningDark
+
+let g:airline_theme='Base2Tone_MorningDark'
 
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
