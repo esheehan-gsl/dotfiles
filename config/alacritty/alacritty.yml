@@ -13,41 +13,51 @@ font:
     style: Italic
   size: 12.0
   offset:
-    y: 2
+    y: 3
 
 # Base16 Grayscale Light - alacritty color config
 # Alexandre Gavioli (https://github.com/Alexx2/)
 colors:
   # Default colors
   primary:
-    background: '0xf7f7f7'
-    foreground: '0x464646'
+    background: '0x232834'
+    foreground: '0x8d95a5'
 
-  # Colors the cursor will use if `custom_cursor_colors` is true
+    # Bright and dim foreground colors
+    #
+    # The dimmed foreground color is calculated automatically if it is not present.
+    # If the bright foreground color is not set, or `draw_bold_text_with_bright_colors`
+    # is `false`, the normal foreground color will be used.
+    #dim_foreground: '0x9a9a9a'
+    #bright_foreground: '0xffffff'
+
+  # Cursor colors
+  #
+  # Colors which should be used to draw the terminal cursor. If these are unset,
+  # the cursor color will be the inverse of the cell color.
   cursor:
-    text: '0xf7f7f7'
-    cursor: '0x464646'
+    text: '0x232834'
+    cursor: '0x2d2006'
+
+  # Selection colors
+  #
+  # Colors which should be used to draw the selection area. If selection
+  # background is unset, selection color will be the inverse of the cell colors.
+  # If only text is unset the cell text color will remain the same.
+  #selection:
+  #  text: '0xeaeaea'
+  #  background: '0x404040'
 
   # Normal colors
   normal:
-    black:   '0xf7f7f7'
-    red:     '0x7c7c7c'
-    green:   '0x8e8e8e'
-    yellow:  '0xa0a0a0'
-    blue:    '0x686868'
-    magenta: '0x747474'
-    cyan:    '0x868686'
-    white:   '0x464646'
-
-  # Bright colors
-  bright:
-    black:   '0xababab'
-    red:     '0x999999'
-    green:   '0xe3e3e3'
-    yellow:  '0xb9b9b9'
-    blue:    '0x525252'
-    magenta: '0x252525'
-    cyan:    '0x5e5e5e'
+    black:   '0x232834'
+    red:     '0x1659df'
+    green:   '0xc6b28b'
+    yellow:  '0xe5ddcd'
+    blue:    '0x3d75e6'
+    magenta: '0x9a7c42'
+    cyan:    '0x728fcb'
+    white:   '0x8d95a5'
     white:   '0x101010'
 
 draw_bold_text_with_bright_colors: false
@@ -57,4 +67,3 @@ draw_bold_text_with_bright_colors: false
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
 background_opacity: 0.95
-
