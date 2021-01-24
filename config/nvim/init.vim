@@ -126,6 +126,10 @@ autocmd! User GoyoEnter Limelight
 autocmd! User GoyoLeave Limelight!
 " }}}
 
+" Snippets {{{
+let g:snipMate = { 'snippet_version' : 1 }
+" }}}
+
 " Local configuration {{{
 if filereadable(expand("~/.config/nvim/local.vim"))
   source ~/.config/nvim/local.vim
