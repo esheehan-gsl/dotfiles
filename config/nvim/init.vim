@@ -91,9 +91,9 @@ endif
 
 syntax enable
 set background=dark
-colorscheme Base2Tone_MorningDark
+colorscheme Base2Tone_MotelDark
 
-let g:airline_theme='Base2Tone_MorningDark'
+let g:airline_theme='Base2Tone_MotelDark'
 
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
