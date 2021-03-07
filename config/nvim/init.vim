@@ -11,8 +11,9 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'chriskempson/base16-vim'
-Plug 'atelierbram/Base2Tone-vim'
+Plug 'andreypopp/vim-colors-plain'
+" For the airline theme
+Plug 'reedes/vim-colors-pencil'
 Plug 'sheerun/vim-polyglot'
 
 " Misc.
@@ -91,13 +92,13 @@ endif
 
 syntax enable
 set background=dark
-colorscheme Base2Tone_MotelDark
+colorscheme plain
 
-let g:airline_theme='Base2Tone_MotelDark'
+let g:airline_theme='pencil'
 
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
-hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
 
 let g:python_highlight_all = 1
 
