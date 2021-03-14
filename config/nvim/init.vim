@@ -123,8 +123,18 @@ let g:prettier#autoformat_config_present = 1
 " }}}
 
 " Goyo / Limelight {{{
-autocmd! User GoyoEnter Limelight
-autocmd! User GoyoLeave Limelight!
+function! s:goyo_enter()
+  colorscheme pencil
+  Limelight
+endfunction
+
+function! s:goyo_leave()
+  colorscheme plain
+  Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
 " Snippets {{{
