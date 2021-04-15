@@ -39,7 +39,6 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'mattn/emmet-vim'
 
 " File / buffer navigation
-Plug 'scrooloose/nerdtree'
 Plug 'kien/ctrlp.vim'
 
 " Git
@@ -102,10 +101,6 @@ let g:airline_theme='pencil'
 let g:python_highlight_all = 1
 
 au BufReadPost *.svelte set syntax=html
-" }}}
-
-" NERDTree {{{
-map <C-k><C-b> :NERDTreeToggle<CR>
 " }}}
 
 " Airline {{{
