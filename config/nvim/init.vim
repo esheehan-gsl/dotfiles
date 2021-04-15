@@ -11,7 +11,7 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'andreypopp/vim-colors-plain'
+Plug 'arcticicestudio/nord-vim'
 " For the airline theme
 Plug 'reedes/vim-colors-pencil'
 Plug 'sheerun/vim-polyglot'
@@ -90,9 +90,8 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-syntax enable
-set background=dark
-colorscheme plain
+let g:nord_cursor_line_number_backgroud = 1
+colorscheme nord
 
 let g:airline_theme='pencil'
 
@@ -124,12 +123,10 @@ let g:prettier#autoformat_config_present = 1
 
 " Goyo / Limelight {{{
 function! s:goyo_enter()
-  colorscheme pencil
   Limelight
 endfunction
 
 function! s:goyo_leave()
-  colorscheme plain
   Limelight!
 endfunction
 
