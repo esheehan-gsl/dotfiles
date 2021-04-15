@@ -19,6 +19,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-surround'
+Plug 'christoomey/vim-tmux-navigator'
 
 " Distraction-free writing
 Plug 'junegunn/goyo.vim'
@@ -130,6 +131,10 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Snippets {{{
 let g:snipMate = { 'snippet_version' : 1 }
+" }}}
+
+" tmux {{{
+let g:tmux_navigator_disable_when_zoomed = 1
 " }}}
 
 " Local configuration {{{
