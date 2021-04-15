@@ -15,7 +15,7 @@ set number
 set relativenumber
 
 " Center the cursor
-set scrolloff=999
+set scrolloff=3
 
 " Highlight the line with the cursor
 set cursorline
