@@ -32,7 +32,6 @@ set mouse=a
 " Recurse into subdirectories with commands like :find
 set path+=**
 
-let mapleader=","
 " File browsing
 let g:netrw_banner=0        " Hide the banner
 let g:netrw_browse_split=4  " Open in prior window
