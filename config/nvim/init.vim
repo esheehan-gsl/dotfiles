@@ -18,8 +18,9 @@ Plug 'sheerun/vim-polyglot'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
-Plug 'tpope/vim-surround'
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-jdaddy'
+Plug 'tpope/vim-surround'
 
 " Distraction-free writing
 Plug 'junegunn/goyo.vim'
