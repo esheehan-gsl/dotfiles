@@ -2,6 +2,8 @@
 " Description: Basic vim configuration
 " vim: set fdm=marker fdl=0 ts=2 sw=2 et tw=80 :
 
+" Open vertical splits on the right
+set splitright
 " I love me some line numbers.
 set number
 set relativenumber
@@ -23,9 +25,15 @@ set ignorecase smartcase
 " Just because it's a terminal doesn't mean I can't use a mouse
 set mouse=a
 
-" Useful keybindings
 
 let mapleader=","
+" File browsing
+let g:netrw_banner=0        " Hide the banner
+let g:netrw_browse_split=4  " Open in prior window
+let g:netrw_liststyle=3     " Tree view
+let g:netrw_list_hide=netrw_gitignore#Hide()
+
+" Useful keybindings
 
 " Add some keybindings for the quickfix window
 nnoremap [q :cprev<CR>
