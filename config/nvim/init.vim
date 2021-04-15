@@ -12,8 +12,6 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
 Plug 'arcticicestudio/nord-vim'
-" For the airline theme
-Plug 'reedes/vim-colors-pencil'
 Plug 'sheerun/vim-polyglot'
 
 " Misc.
@@ -93,7 +91,7 @@ endif
 let g:nord_cursor_line_number_backgroud = 1
 colorscheme nord
 
-let g:airline_theme='pencil'
+let g:airline_theme='nord'
 
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
