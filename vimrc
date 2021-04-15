@@ -29,6 +29,8 @@ set ignorecase smartcase
 " Just because it's a terminal doesn't mean I can't use a mouse
 set mouse=a
 
+" Recurse into subdirectories with commands like :find
+set path+=**
 
 let mapleader=","
 " File browsing
