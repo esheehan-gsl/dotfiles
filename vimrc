@@ -2,8 +2,14 @@
 " Description: Basic vim configuration
 " vim: set fdm=marker fdl=0 ts=2 sw=2 et tw=80 :
 
+set nocompatible
+syntax enable
+filetype plugin on
+set noswapfile
+
 " Open vertical splits on the right
 set splitright
+
 " I love me some line numbers.
 set number
 set relativenumber
@@ -16,8 +22,6 @@ set cursorline
 
 " Decrease the update time to 100 milliseconds for vim-gitgutter
 set updatetime=100
-
-set noswapfile
 
 " Ignore case as long as the query contains no capital letters.
 set ignorecase smartcase
