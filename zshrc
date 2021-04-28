@@ -70,6 +70,7 @@ plugins=(
   pip
   pyenv
   python
+  tmux
 )
 
 source $ZSH/oh-my-zsh.sh
