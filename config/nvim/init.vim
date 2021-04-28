@@ -13,6 +13,7 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 " Color
 Plug 'arcticicestudio/nord-vim'
 Plug 'sheerun/vim-polyglot'
+Plug 'niftylettuce/vim-jinja'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
