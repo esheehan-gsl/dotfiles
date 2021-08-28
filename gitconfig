@@ -15,3 +15,5 @@
   submodule = log
 [config]
   rebase = false
+[init]
+	defaultBranch = main
