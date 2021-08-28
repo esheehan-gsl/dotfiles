@@ -11,7 +11,7 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
 Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
@@ -90,10 +90,9 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-let g:nord_cursor_line_number_backgroud = 1
-colorscheme nord
+colorscheme OceanicNext
 
-let g:airline_theme='nord'
+let g:airline_theme='oceanicnext'
 
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
