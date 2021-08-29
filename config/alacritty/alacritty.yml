@@ -1,17 +1,17 @@
 font:
   normal:
-    family: Fira Mono
+    family: IBM Plex Mono
     style: Regular
   bold:
-    family: Fira Mono
+    family: IBM Plex Mono
     style: Bold
   italic:
-    family: Fira Mono
+    family: IBM Plex Mono
     style: Italic
   bold_italic:
-    family: Fira Mono
+    family: IBM Plex Mono
     style: Italic
-  size: 10.0
+  size: 11.0
   offset:
     y: 3
 
