@@ -11,3 +11,7 @@ if status is-interactive
   abbr --add --global fd 'fdfind'
   abbr --add --global find 'fdfind'
 end
+
+if test -e ~/.config/fish/local.fish
+  source ~/.config/fish/local.fish
+end
