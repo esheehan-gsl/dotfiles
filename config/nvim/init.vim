@@ -17,6 +17,7 @@ Plug 'niftylettuce/vim-jinja'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
+Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-surround'
