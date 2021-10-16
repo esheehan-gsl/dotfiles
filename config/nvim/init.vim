@@ -11,7 +11,7 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'arcticicestudio/nord-vim'
+Plug 'mhartington/oceanic-next'
 Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
@@ -40,7 +40,8 @@ Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
 Plug 'mattn/emmet-vim'
 
 " File / buffer navigation
-Plug 'kien/ctrlp.vim'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -90,10 +91,17 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
-let g:nord_cursor_line_number_backgroud = 1
-colorscheme nord
+syntax on
+let g:oceanic_next_terminal_bold = 1
+let g:oceanic_next_terminal_italic = 1
+colorscheme OceanicNext
 
-let g:airline_theme='nord'
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+let g:airline_theme='oceanicnext'
 
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
