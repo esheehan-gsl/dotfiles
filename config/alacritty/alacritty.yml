@@ -11,7 +11,7 @@ font:
   bold_italic:
     family: IBM Plex Mono
     style: Italic
-  size: 10.0
+  size: 12.0
   offset:
     y: 3
 
