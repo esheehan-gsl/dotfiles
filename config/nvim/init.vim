@@ -103,6 +103,10 @@ hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 let g:airline_theme='oceanicnext'
 
+" Set fade color for Limelight
+let g:limelight_conceal_ctermfg='gray'
+let g:limelight_conceal_guifg='#65737e'
+
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
 " hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
