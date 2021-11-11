@@ -10,6 +10,7 @@ if status is-interactive
 
   abbr --add --global fd 'fdfind'
   abbr --add --global find 'fdfind'
+  abbr --add --global 'dci' 'docker rmi (docker images -a --filter=dangling=true -q)'
 end
 
 if test -e ~/.config/fish/local.fish
