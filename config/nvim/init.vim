@@ -136,6 +136,10 @@ let g:snipMate = { 'snippet_version' : 1 }
 let g:tmux_navigator_disable_when_zoomed = 1
 " }}}
 
+"{{{ Markdown
+let g:vim_markdown_conceal = 0
+"}}}
+
 " Local configuration {{{
 if filereadable(expand("~/.config/nvim/local.vim"))
   source ~/.config/nvim/local.vim
