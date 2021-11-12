@@ -11,7 +11,6 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'mhartington/oceanic-next'
 Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
@@ -87,21 +86,11 @@ set undoreload=1000
 " Colors {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-if (has("termguicolors"))
- set termguicolors
-endif
-
 syntax on
-let g:oceanic_next_terminal_bold = 1
-let g:oceanic_next_terminal_italic = 1
-colorscheme OceanicNext
+let g:solarized_termtrans=1
+colorscheme solarized
 
-hi Normal guibg=NONE ctermbg=NONE
-hi LineNr guibg=NONE ctermbg=NONE
-hi SignColumn guibg=NONE ctermbg=NONE
-hi EndOfBuffer guibg=NONE ctermbg=NONE
-
-let g:airline_theme='oceanicnext'
+let g:airline_theme='solarized'
 
 " Set fade color for Limelight
 let g:limelight_conceal_ctermfg='gray'
