@@ -1,4 +1,10 @@
+if status is-login
+  pyenv init --path | source
+end
+
 if status is-interactive
+  pyenv init - | source
+
   abbr --add --global pbcopy 'xsel --clipboard --input'
   abbr --add --global pbpaste 'xsel --clipboard --output'
   abbr --add --global open 'xdg-open &>/dev/null'
