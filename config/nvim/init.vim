@@ -11,7 +11,6 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'vim-airline/vim-airline-themes'
 Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
@@ -87,15 +86,15 @@ set undoreload=1000
 " Colors {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-set background=dark
+syntax on
 let g:solarized_termtrans=1
 colorscheme solarized
 
 let g:airline_theme='solarized'
 
-" Hide end of buffer ~
-" From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
-" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+" Set fade color for Limelight
+let g:limelight_conceal_ctermfg='gray'
+let g:limelight_conceal_guifg='#65737e'
 
 let g:python_highlight_all = 1
 
