@@ -11,6 +11,7 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
+Plug 'mhartington/oceanic-next'
 Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
@@ -87,10 +88,15 @@ set undoreload=1000
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 syntax on
-let g:solarized_termtrans=1
-colorscheme solarized
+colorscheme OceanicNext
 
-let g:airline_theme='solarized'
+" Enable transparent background
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
+
+let g:airline_theme='oceanicnext'
 
 " Set fade color for Limelight
 let g:limelight_conceal_ctermfg='gray'
