@@ -13,15 +13,15 @@ if status is-interactive
 
   abbr --add --global rm 'rm -I'
 
-  abbr --add --global l 'ls -lh'
-  abbr --add --global ll 'ls -lha'
+  abbr --add --global l 'exa --long --header --git'
+  abbr --add --global ll 'exa --long --header --git --all'
+  abbr --add --global lt 'exa --long --header --git --all --tree'
   abbr --add --global tree 'exa --tree'
 
   abbr --add --global fd 'fdfind'
-  abbr --add --global find 'fdfind'
   abbr --add --global 'dci' 'docker rmi (docker images -a --filter=dangling=true -q)'
 
-  abbr --add --global ps 'procs'
+  abbr --add --global p 'procs'
 end
 
 if test -e ~/.config/fish/local.fish
