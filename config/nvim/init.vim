@@ -11,7 +11,7 @@ source ~/.vimrc
 call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
-Plug 'vim-airline/vim-airline-themes'
+Plug 'mhartington/oceanic-next'
 Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
@@ -87,11 +87,13 @@ set undoreload=1000
 " Colors {{{
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 
-set background=dark
-let g:solarized_termtrans=1
-colorscheme solarized
+if (has("termguicolors"))
+ set termguicolors
+endif
 
-let g:airline_theme='solarized'
+colorscheme OceanicNext
+
+let g:airline_theme='oceanicnext'
 
 " Hide end of buffer ~
 " From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
