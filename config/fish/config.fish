@@ -1,4 +1,6 @@
 if status is-interactive
+  fish_add_path ~/.local/bin
+
   set -gx EDITOR vim
 
   abbr --add --global pbcopy 'xsel --clipboard --input'
