@@ -1,5 +1,6 @@
 [user]
   name = W. Evan Sheehan
+	email = darth_mall@pm.me
 [alias]
   st = status -s -b
   ci = commit --verbose
