@@ -3,8 +3,8 @@ if status is-interactive
 
   set -gx EDITOR vim
 
-  abbr --add --global pbcopy 'xsel --clipboard --input'
-  abbr --add --global pbpaste 'xsel --clipboard --output'
+  abbr --add --global pbcopy 'xclip -in -selection clipboard'
+  abbr --add --global pbpaste 'xclip -out -selection clipboard'
   abbr --add --global open 'xdg-open &>/dev/null'
 
   abbr --add --global rm 'rm -I'
