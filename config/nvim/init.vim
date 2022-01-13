@@ -31,6 +31,9 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+
 " Python
 Plug 'tmhedberg/SimpylFold'
 Plug 'psf/black', { 'branch': 'stable' }
@@ -109,6 +112,18 @@ au BufReadPost *.svelte set syntax=html
 
 " Airline {{{
 let g:airline_section_z = '☰ %l/%L  : %c'
+" }}}
+
+" {{{ Language Server Prototocol
+lua << EOF
+require'lspconfig'.cssls.setup{}
+require'lspconfig'.html.setup{}
+require'lspconfig'.jsonls.setup{}
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.svelte.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.vimls.setup{}
+EOF
 " }}}
 
 " Black {{{
