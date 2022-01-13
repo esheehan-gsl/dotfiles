@@ -31,6 +31,9 @@ Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
 
+" LSP
+Plug 'neovim/nvim-lspconfig'
+
 " Python
 Plug 'tmhedberg/SimpylFold'
 Plug 'psf/black', { 'branch': 'stable' }
@@ -91,13 +94,20 @@ if (has("termguicolors"))
  set termguicolors
 endif
 
+syntax on
 colorscheme OceanicNext
+
+" Enable transparent background
+hi Normal guibg=NONE ctermbg=NONE
+hi LineNr guibg=NONE ctermbg=NONE
+hi SignColumn guibg=NONE ctermbg=NONE
+hi EndOfBuffer guibg=NONE ctermbg=NONE
 
 let g:airline_theme='oceanicnext'
 
-" Hide end of buffer ~
-" From Grant Custer's vimrc https://github.com/GrantCuster/dotfiles/blob/master/.vimrc
-" hi! EndOfBuffer ctermbg=bg ctermfg=bg guibg=bg guifg=bg
+" Set fade color for Limelight
+let g:limelight_conceal_ctermfg='gray'
+let g:limelight_conceal_guifg='#65737e'
 
 let g:python_highlight_all = 1
 
@@ -106,6 +116,18 @@ au BufReadPost *.svelte set syntax=html
 
 " Airline {{{
 let g:airline_section_z = '☰ %l/%L  : %c'
+" }}}
+
+" {{{ Language Server Prototocol
+lua << EOF
+require'lspconfig'.cssls.setup{}
+require'lspconfig'.html.setup{}
+require'lspconfig'.jsonls.setup{}
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.svelte.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.vimls.setup{}
+EOF
 " }}}
 
 " Black {{{

@@ -1,8 +1,4 @@
 function fish_prompt
-  set -g __fish_git_prompt_use_informative_chars
-  set -g __fish_git_prompt_showdirtystate
-  set -g __fish_git_prompt_showcolorhints
-
-  printf '\n%s%s\n> ' (prompt_pwd) (fish_git_prompt)
+  set -l prompt_symbol '>'
+  echo -s (set_color blue)(prompt_pwd) ' ' (set_color yellow) $prompt_symbol (set_color normal) ' '
 end
-
