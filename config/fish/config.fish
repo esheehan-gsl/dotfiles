@@ -22,6 +22,8 @@ if status is-interactive
   abbr --add --global 'dci' 'docker rmi (docker images -a --filter=dangling=true -q)'
 
   abbr --add --global p 'procs'
+
+  abbr --add --global ssh 'TERM=xterm-256color ssh'
 end
 
 if test -e ~/.config/fish/local.fish
