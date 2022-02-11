@@ -6,6 +6,7 @@ if status is-interactive
   pyenv init - | source
 
   set -gx EDITOR vim
+  set --universal nvm_default_version lts
 
   abbr --add --global pbcopy 'xsel --clipboard --input'
   abbr --add --global pbpaste 'xsel --clipboard --output'
