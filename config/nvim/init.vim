@@ -200,6 +200,14 @@ let g:tmux_navigator_disable_when_zoomed = 1
 let g:vim_markdown_conceal = 0
 "}}}
 
+"{{{ Keybindings
+nnoremap <C-P> :Files<CR>
+nnoremap <C-H> <C-W>h
+nnoremap <C-J> <C-W>j
+nnoremap <C-K> <C-W>k
+nnoremap <C-L> <C-W>l
+"}}}
+
 " Local configuration {{{
 if filereadable(expand("~/.config/nvim/local.vim"))
   source ~/.config/nvim/local.vim
