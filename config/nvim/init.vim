@@ -192,10 +192,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 let g:snipMate = { 'snippet_version' : 1 }
 " }}}
 
-" tmux {{{
-let g:tmux_navigator_disable_when_zoomed = 1
-" }}}
-
 "{{{ Markdown
 let g:vim_markdown_conceal = 0
 "}}}
