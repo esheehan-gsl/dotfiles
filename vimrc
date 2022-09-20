@@ -45,3 +45,6 @@ nnoremap ]q :cnext<CR>
 nnoremap [Q :cfirst<CR>
 nnoremap ]Q :clast<CR>
 
+" Config management
+command ConfigOpen edit $MYVIMRC
+command ConfigReload source $MYVIMRC
