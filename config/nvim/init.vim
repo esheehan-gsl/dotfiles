@@ -124,6 +124,10 @@ autocmd BufWritePre *.py execute ':Black'
 let g:prettier#autoformat_config_present = 1
 " }}}
 
+" FZF {{{
+noremap  <C-p> :FZF<CR>
+" }}}
+
 " Goyo / Limelight {{{
 function! s:goyo_enter()
   Limelight
