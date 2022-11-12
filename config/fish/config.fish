@@ -17,4 +17,6 @@ if status is-interactive
   abbr --add --global fd 'fdfind'
 
   abbr --add --global ps 'procs'
+
+  abbr --add --global c 'batcat'
 end
