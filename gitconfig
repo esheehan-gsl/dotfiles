@@ -13,7 +13,9 @@
   default = simple
 [core]
   editor = $EDITOR
+  pager = delta
 [diff]
+  colorMoved = default
   submodule = log
 [config]
   rebase = false
@@ -21,3 +23,9 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[delta]
+  syntax-theme = Nord
+  plus-style = "'#3b4252' '#a3be8c'"
+  minus-style = "'#e5e9f0' '#bf616a'"
+  navigate = true
+  light = false
