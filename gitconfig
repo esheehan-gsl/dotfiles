@@ -8,6 +8,7 @@
   graph = log --graph --decorate --oneline
   sup = submodule update --remote
 	l = log --oneline
+	lp = !git branch --merged | grep -v \"^*\" | xargs git branch -d
 [push]
   default = simple
 [core]
