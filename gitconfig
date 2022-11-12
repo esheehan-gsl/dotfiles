@@ -7,6 +7,7 @@
   co = checkout
   graph = log --graph --decorate --oneline
   sup = submodule update --remote
+	l = log --oneline
 [push]
   default = simple
 [core]
