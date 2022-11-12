@@ -14,7 +14,6 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'niftylettuce/vim-jinja'
 
 " Misc.
 Plug 'editorconfig/editorconfig-vim'
@@ -109,6 +108,7 @@ let g:limelight_conceal_guifg='#65737e'
 let g:python_highlight_all = 1
 
 au BufReadPost *.svelte set syntax=html
+au BufReadPost *.njk set syntax=html
 " }}}
 
 " Airline {{{
