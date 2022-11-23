@@ -21,6 +21,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-surround'
 Plug 'christoomey/vim-tmux-navigator'
+Plug 'easymotion/vim-easymotion'
 
 " Distraction-free writing
 Plug 'junegunn/goyo.vim'
