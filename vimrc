@@ -37,6 +37,9 @@ let g:netrw_banner=0        " Hide the banner
 let g:netrw_liststyle=3     " Tree view
 let g:netrw_list_hide=netrw_gitignore#Hide()
 
+" Spell checking
+au BufNewFile,BufReadPost *.md,*.txt setlocal spell spelllang=en_us
+
 " Useful keybindings
 
 " Add some keybindings for the quickfix window
