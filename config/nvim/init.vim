@@ -108,9 +108,7 @@ let g:limelight_conceal_guifg='#65737e'
 
 let g:python_highlight_all = 1
 
-au BufReadPost *.svelte set syntax=html
-au BufReadPost *.njk set syntax=html
-au BufReadPost *.webc set syntax=html
+au BufNewFile,BufReadPost *.svelte,*.njk,*.webc set syntax=html
 " }}}
 
 " Airline {{{
