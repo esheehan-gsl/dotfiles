@@ -1,6 +1,5 @@
 [user]
   name = W. Evan Sheehan
-	email = darth_mall@pm.me
 [alias]
   st = status -s -b
   ci = commit --verbose
@@ -11,18 +10,25 @@
 	lp = !git branch --merged | grep -v \"^*\" | xargs git branch -d
 [push]
   default = simple
+	autoSetupRemote = true
 [core]
   editor = $EDITOR
   pager = delta
 [diff]
   colorMoved = default
   submodule = log
+	colorMoved = default
 [config]
   rebase = false
 [pull]
 	rebase = false
 [init]
 	defaultBranch = main
+[filter "lfs"]
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
 [delta]
   syntax-theme = Nord
   plus-style = "'#3b4252' '#a3be8c'"
