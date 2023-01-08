@@ -25,6 +25,8 @@ if status is-interactive
   abbr --add --global p 'procs'
 
   abbr --add --global ssh 'TERM=xterm-256color ssh'
+
+  abbr --add --global c 'batcat'
 end
 
 if test -e ~/.config/fish/local.fish
