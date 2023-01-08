@@ -14,8 +14,10 @@
 	autoSetupRemote = true
 [core]
   editor = $EDITOR
+	pager = delta
 [diff]
   submodule = log
+	colorMoved = default
 [config]
   rebase = false
 [init]
@@ -25,3 +27,5 @@
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
+[delta]
+	navigate = true
