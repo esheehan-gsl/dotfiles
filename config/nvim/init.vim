@@ -12,6 +12,7 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 
 " Color
 Plug 'mhartington/oceanic-next'
+Plug 'arcticicestudio/nord-vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
@@ -92,7 +93,7 @@ if (has("termguicolors"))
 endif
 
 syntax on
-colorscheme OceanicNext
+colorscheme nord
 
 " Enable transparent background
 hi Normal guibg=NONE ctermbg=NONE
@@ -100,7 +101,7 @@ hi LineNr guibg=NONE ctermbg=NONE
 hi SignColumn guibg=NONE ctermbg=NONE
 hi EndOfBuffer guibg=NONE ctermbg=NONE
 
-let g:airline_theme='oceanicnext'
+let g:airline_theme='nord'
 
 " Set fade color for Limelight
 let g:limelight_conceal_ctermfg='gray'
