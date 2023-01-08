@@ -17,6 +17,7 @@ Plug 'sheerun/vim-polyglot'
 Plug 'niftylettuce/vim-jinja'
 
 " Misc.
+Plug 'christoomey/vim-tmux-navigator'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-commentary'
