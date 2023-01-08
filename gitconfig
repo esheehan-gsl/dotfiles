@@ -1,6 +1,5 @@
 [user]
   name = W. Evan Sheehan
-	email = evan.sheehan@noaa.gov
 [alias]
   st = status -s -b
   ci = commit --verbose
@@ -14,12 +13,15 @@
 	autoSetupRemote = true
 [core]
   editor = $EDITOR
-	pager = delta
+  pager = delta
 [diff]
+  colorMoved = default
   submodule = log
 	colorMoved = default
 [config]
   rebase = false
+[pull]
+	rebase = false
 [init]
 	defaultBranch = main
 [filter "lfs"]
@@ -28,4 +30,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [delta]
-	navigate = true
+  syntax-theme = Nord
+  plus-style = "'#3b4252' '#a3be8c'"
+  minus-style = "'#e5e9f0' '#bf616a'"
+  navigate = true
+  light = false
