@@ -23,11 +23,8 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-surround'
 
-" Distraction-free writing
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
-
 " Snippets
+" vim-addon-mw-utils and tlib_vim are dependencies for vim-snipmate
 Plug 'MarcWeber/vim-addon-mw-utils'
 Plug 'tomtom/tlib_vim'
 Plug 'garbas/vim-snipmate'
