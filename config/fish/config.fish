@@ -4,12 +4,14 @@ end
 
 if status is-interactive
   pyenv init - | source
+  
+  fish_add_path ~/.local/bin
 
   set -gx EDITOR vim
   set --universal nvm_default_version lts
 
-  abbr --add --global pbcopy 'xsel --clipboard --input'
-  abbr --add --global pbpaste 'xsel --clipboard --output'
+  abbr --add --global pbcopy 'xclip -in -selection clipboard'
+  abbr --add --global pbpaste 'xclip -out -selection clipboard'
   abbr --add --global open 'xdg-open &>/dev/null'
 
   abbr --add --global rm 'rm -I'
@@ -23,8 +25,6 @@ if status is-interactive
   abbr --add --global 'dci' 'docker rmi (docker images -a --filter=dangling=true -q)'
 
   abbr --add --global p 'procs'
-
-  abbr --add --global ssh 'TERM=xterm-256color ssh'
 
   abbr --add --global c 'batcat'
 end

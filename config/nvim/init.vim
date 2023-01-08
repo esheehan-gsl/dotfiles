@@ -14,7 +14,6 @@ call plug#begin(expand('$HOME/.config/nvim/plug'))
 Plug 'mhartington/oceanic-next'
 Plug 'arcticicestudio/nord-vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'niftylettuce/vim-jinja'
 
 " Misc.
 Plug 'christoomey/vim-tmux-navigator'
@@ -23,6 +22,11 @@ Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-jdaddy'
 Plug 'tpope/vim-surround'
+Plug 'easymotion/vim-easymotion'
+
+" Distraction-free writing
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Snippets
 " vim-addon-mw-utils and tlib_vim are dependencies for vim-snipmate
@@ -107,7 +111,7 @@ let g:limelight_conceal_guifg='#65737e'
 
 let g:python_highlight_all = 1
 
-au BufReadPost *.svelte set syntax=html
+au BufNewFile,BufReadPost *.svelte,*.njk,*.webc set syntax=html
 " }}}
 
 " Airline {{{
@@ -169,6 +173,10 @@ autocmd BufWritePre *.py execute ':Black'
 
 " Prettier {{{
 let g:prettier#autoformat_config_present = 1
+" }}}
+
+" FZF {{{
+noremap  <C-p> :FZF<CR>
 " }}}
 
 " Goyo / Limelight {{{
