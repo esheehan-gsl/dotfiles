@@ -11,6 +11,7 @@
 	lp = !git branch --merged | grep -v \"^*\" | xargs git branch -d
 [push]
   default = simple
+	autoSetupRemote = true
 [core]
   editor = $EDITOR
 [diff]
