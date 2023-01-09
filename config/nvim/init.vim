@@ -115,6 +115,7 @@ au BufNewFile,BufReadPost *.svelte,*.njk,*.webc set syntax=html
 " }}}
 
 " Airline {{{
+let g:airline#extensions#branch#displayed_head_limit = 12
 let g:airline_section_z = '☰ %l/%L  : %c'
 " }}}
 
