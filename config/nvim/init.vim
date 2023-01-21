@@ -16,7 +16,7 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'sheerun/vim-polyglot'
 
 " Misc.
-Plug 'christoomey/vim-tmux-navigator'
+Plug 'knubie/vim-kitty-navigator', {'do': 'cp ./*.py ~/.config/kitty/'}
 Plug 'editorconfig/editorconfig-vim'
 Plug 'thaerkh/vim-indentguides'
 Plug 'tpope/vim-commentary'
@@ -202,10 +202,12 @@ let g:vim_markdown_conceal = 0
 
 "{{{ Keybindings
 nnoremap <C-P> :Files<CR>
-nnoremap <C-H> <C-W>h
-nnoremap <C-J> <C-W>j
-nnoremap <C-K> <C-W>k
-nnoremap <C-L> <C-W>l
+
+" vim-kitty-navigator
+nnoremap <silent> <C-H> :KittyNavigateLeft<cr>
+nnoremap <silent> <C-J> :KittyNavigateDown<cr>
+nnoremap <silent> <C-K> :KittyNavigateUp<cr>
+nnoremap <silent> <C-L> :KittyNavigateRight<cr>
 "}}}
 
 " Local configuration {{{
