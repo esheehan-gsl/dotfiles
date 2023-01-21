@@ -25,8 +25,7 @@ Plug 'tpope/vim-surround'
 Plug 'easymotion/vim-easymotion'
 
 " Distraction-free writing
-Plug 'junegunn/goyo.vim'
-Plug 'junegunn/limelight.vim'
+Plug 'Pocco81/true-zen.nvim'
 
 " Snippets
 " vim-addon-mw-utils and tlib_vim are dependencies for vim-snipmate
@@ -179,18 +178,12 @@ let g:prettier#autoformat_config_present = 1
 noremap  <C-p> :FZF<CR>
 " }}}
 
-" Goyo / Limelight {{{
-function! s:goyo_enter()
-  Limelight
-endfunction
-
-function! s:goyo_leave()
-  Limelight!
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
-" }}}
+"{{{ true-zen.nvim
+lua << EOF
+  require('true-zen').setup {
+  }
+EOF
+"}}}
 
 " Snippets {{{
 let g:snipMate = { 'snippet_version' : 1 }
