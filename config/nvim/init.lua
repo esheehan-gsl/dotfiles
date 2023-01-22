@@ -5,7 +5,7 @@
 -- Load the basic vim configuration from .vimrc. I keep some basic set up like
 -- line numbers in the old ~/.vimrc location for any time I end up not having
 -- access to NeoVim.
-vim.cmd.source('~/.vimrc')
+vim.cmd.source(vim.fn.expand('$HOME')..'/.vimrc')
 
 require('config/plugins')
 require('config/lsp')
@@ -26,7 +26,7 @@ vim.g.SimpylFold_docstring_preview = 1
 
 -- Undo {{{
 vim.opt.undofile = true
-vim.opt.undodir = '~/.config/nvim/undo'
+vim.opt.undodir = vim.fn.stdpath('data')..'/undo'
 vim.opt.undolevels = 10000
 vim.opt.undoreload = 1000
 -- }}}
