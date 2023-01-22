@@ -1,6 +1,6 @@
 " Author: Evan Sheehan <esheehan@fastmail.com>
 " Description: NeoVim configuration
-" vim: set fdm=marker fdl=0 ts=2 sw=2 et tw=80 :
+" vim: set fdm=marker fdl=0 ts=2 sw=2 tw=80 :
 
 " Load the basic vim configuration from .vimrc. I keep some basic set up like
 " line numbers in the old ~/.vimrc location for any time I end up not having
