@@ -66,7 +66,7 @@ vim.g.airline_section_z = '☰ %l/%L  : %c'
 -- }}}
 
 -- FZF {{{
-vim.keymap.set('n', '<C-p>', ':Files<CR>')
+vim.keymap.set('n', '<C-p>', ':GFiles<CR>')
 -- }}}
 
 -- Linting / Formatting {{{
