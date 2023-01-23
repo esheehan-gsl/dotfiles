@@ -1,6 +1,6 @@
 " Author: Evan Sheehan <esheehan@fastmail.com>
 " Description: Basic vim configuration
-" vim: set fdm=marker fdl=0 ts=2 sw=2 et tw=80 :
+" vim: set fdm=marker fdl=0 ts=2 sw=2 tw=80 :
 
 set nocompatible
 syntax enable
