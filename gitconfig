@@ -1,6 +1,6 @@
 [user]
   name = W. Evan Sheehan
-	email = evan.sheehan@noaa.gov
+	useConfigOnly = true
 [alias]
   st = status -s -b
   ci = commit --verbose
