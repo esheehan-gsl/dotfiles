@@ -1,6 +1,6 @@
 [user]
   name = W. Evan Sheehan
-	email = darth_mall+github@pm.me
+	useConfigOnly = true
 [alias]
   st = status -s -b
   ci = commit --verbose
@@ -25,6 +25,12 @@
 	rebase = false
 [init]
 	defaultBranch = main
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
 [filter "lfs"]
 	required = true
 	clean = git-lfs clean -- %f

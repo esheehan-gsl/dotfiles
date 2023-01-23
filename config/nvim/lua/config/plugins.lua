@@ -32,6 +32,9 @@ return require('packer').startup(function(use)
 	use 'tpope/vim-jdaddy'
 	use 'tpope/vim-surround'
 	use 'easymotion/vim-easymotion'
+	use 'vim-test/vim-test'
+	-- For vim-test
+	use 'skywind3000/asyncrun.vim'
 
 	-- Distraction-free writing
 	use 'Pocco81/true-zen.nvim'
