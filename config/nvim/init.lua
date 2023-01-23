@@ -70,6 +70,16 @@ vim.g.airline_section_z = '☰ %l/%L  : %c'
 vim.keymap.set('n', '<C-p>', ':GFiles<CR>')
 -- }}}
 
+-- Testing {{{
+vim.g['test#strategy'] = 'asyncrun_background'
+
+vim.keymap.set('n', '<leader>t', ':TestNearest<CR>')
+vim.keymap.set('n', '<leader>T', ':TestFile<CR>')
+vim.keymap.set('n', '<leader>a', ':TestSuite<CR>')
+vim.keymap.set('n', '<leader>l', ':TestLast<CR>')
+vim.keymap.set('n', '<leader>g', ':TestVisit<CR>')
+--
+
 -- Linting / Formatting {{{
 -- Python
 vim.api.nvim_create_autocmd({'BufWritePre'}, {
