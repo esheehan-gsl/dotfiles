@@ -62,6 +62,7 @@ vim.api.nvim_create_autocmd({'BufNewFile', 'BufReadPost'}, {
 -- }}}
 
 -- Airline {{{
+vim.g['airline#extensions#branch#displayed_head_limit'] = 12
 vim.g.airline_section_z = '☰ %l/%L  : %c'
 -- }}}
 
