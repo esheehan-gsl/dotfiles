@@ -11,7 +11,12 @@ if status is-interactive
 
 	fish_add_path ~/.local/bin
 
-	set -gx EDITOR vim
+	if type -q nvim
+		set -gx EDITOR nvim
+	else
+		set -gx EDITOR vim
+	end
+
 	set --universal nvm_default_version lts
 
 	abbr --add --global pbcopy 'xclip -in -selection clipboard'
