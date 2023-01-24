@@ -11,7 +11,8 @@ Just an ever-changing collection of config files.
  - [exa](https://the.exa.website/#installation)
  - [neovim](https://github.com/neovim/neovim/releases)
  - fish `sudo add-apt-repository ppa:fish-shell/release-3`
- 
+ - tree-sitter CLI (`npm install -g tree-sitter-cli`)
+
 ### Language servers
 
 ```

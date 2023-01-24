@@ -7,8 +7,12 @@
 -- access to NeoVim.
 vim.cmd.source(vim.fn.expand('$HOME')..'/.vimrc')
 
+-- Disable syntax highlighting because tree-sitter will take care of it.
+vim.cmd.syntax('off')
+
 require('config/plugins')
 require('config/lsp')
+require('config/treesitter')
 
 -- Ignore {{{
 vim.opt.wildignore:append({'*.pyc', '*.min.js'})
@@ -18,10 +22,8 @@ vim.opt.wildignore:append({'*.png', '*.PNG', '*.JPG', '*.jpg', '*.JPEG', '*.jpeg
 -- Folding {{{
 vim.opt.foldenable = true
 vim.opt.foldlevel = 99
-vim.opt.foldmethod = 'syntax'
-
--- SimpylFold
-vim.g.SimpylFold_docstring_preview = 1
+vim.opt.foldmethod = 'expr'
+vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
 -- }}}
 
 -- Undo {{{
