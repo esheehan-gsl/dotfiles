@@ -1,6 +1,8 @@
 [user]
   name = W. Evan Sheehan
 	useConfigOnly = true
+[include]
+  path = ~/.gitconfig-local
 [alias]
   st = status -s -b
   ci = commit --verbose
