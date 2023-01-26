@@ -1,26 +1,32 @@
+# Author: W. Evan Sheehan <darth_mall@pm.me>
+# Description: Git config
+# vim: set ts=2 sw=2 tw=80 :
+
 [user]
-  name = W. Evan Sheehan
+	name = W. Evan Sheehan
 	useConfigOnly = true
+[include]
+	path = ~/.gitconfig-local
 [alias]
-  st = status -s -b
-  ci = commit --verbose
-  co = checkout
-  graph = log --graph --decorate --oneline
-  sup = submodule update --remote
+	st = status -s -b
+	ci = commit --verbose
+	co = checkout
+	graph = log --graph --decorate --oneline
+	sup = submodule update --remote
 	l = log --oneline
 	lp = !git branch --merged | grep -v \"^*\" | xargs git branch -d
 [push]
-  default = simple
+	default = simple
 	autoSetupRemote = true
 [core]
-  editor = $EDITOR
-  pager = delta
+	editor = $EDITOR
+	pager = delta
 [diff]
-  colorMoved = default
-  submodule = log
+	colorMoved = default
+	submodule = log
 	colorMoved = default
 [config]
-  rebase = false
+	rebase = false
 [pull]
 	rebase = false
 [init]
@@ -37,8 +43,8 @@
 	smudge = git-lfs smudge -- %f
 	process = git-lfs filter-process
 [delta]
-  syntax-theme = Nord
-  plus-style = "'#3b4252' '#a3be8c'"
-  minus-style = "'#e5e9f0' '#bf616a'"
-  navigate = true
-  light = false
+	syntax-theme = Nord
+	plus-style = "'#3b4252' '#a3be8c'"
+	minus-style = "'#e5e9f0' '#bf616a'"
+	navigate = true
+	light = false

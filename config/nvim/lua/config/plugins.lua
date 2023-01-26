@@ -47,9 +47,9 @@ return require('packer').startup(function(use)
 
 	-- LSP
 	use 'neovim/nvim-lspconfig'
+	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
 
 	-- Python
-	use 'tmhedberg/SimpylFold'
 	use 'psf/black'
 
 	-- JS/CSS/HTML
