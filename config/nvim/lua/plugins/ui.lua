@@ -12,7 +12,14 @@ return {
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = true,
-		cmd = { "Telescope" }
+		-- TODO: Move keybindings here
+		-- TODO: Add keybinding for notify
+		cmd = { "Telescope" },
+		config = function(_, opts)
+			local tele = require("telescope")
+			tele.setup(opts)
+			tele.load_extension("notify")
+		end,
 	},
 	{
 		-- TODO: Add nerdfont for icons? Or change how notifications are displayed?
