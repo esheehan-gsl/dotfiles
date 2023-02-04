@@ -26,15 +26,12 @@ return {
 		end,
 	},
 	-- TODO: 'Pocco81/true-zen.nvim', -- Distraction-free writing
-	-- TODO: 'neovim/nvim-lspconfig',
 	-- Python
 	-- TODO: 'psf/black',
 	-- Web
 	-- TODO: 'prettier/vim-prettier',
 	-- TODO: 'mattn/emmet-vim',
-	-- TODO: surround plugin
 	-- TODO: snippets
-	-- TODO: toggle comments
 	-- TODO: todo plugin
 	-- TODO: Dressing.nvim?
 }
