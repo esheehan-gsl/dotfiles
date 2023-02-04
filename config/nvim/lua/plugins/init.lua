@@ -34,6 +34,28 @@ return {
 		end,
 	},
 	-- TODO: leap.nvim
+	{
+		"rcarriga/nvim-notify",
+		keys = {
+			{
+				"<leader>un",
+				function()
+					require("notify").dismiss({ silent = true, pending = true })
+				end,
+				desc = "Clear notifications",
+			},
+		},
+		opts = {
+			timeout = 3000,
+		},
+		config = function(_, opts)
+			local notify = require("notify")
+			notify.setup(opts)
+			--
+			-- Replace default notify function with nvim-notify
+			vim.notify = notify
+		end,
+	},
 	-- TODO: 'Pocco81/true-zen.nvim', -- Distraction-free writing
 	-- TODO: 'neovim/nvim-lspconfig',
 	-- TODO: {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
@@ -47,5 +69,4 @@ return {
 	-- TODO: toggle comments
 	-- TODO: todo plugin
 	-- TODO: Dressing.nvim?
-	-- TODO: notify
 }
