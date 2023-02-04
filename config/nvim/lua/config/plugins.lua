@@ -2,75 +2,57 @@
 -- Description: NeoVim plugins
 -- vim: set fdm=marker fdl=0 ts=2 sw=2 tw=80 :
 
--- Install packer for package management, if it's missing
-local ensure_packer = function()
-	local fn = vim.fn
-	local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-	if fn.empty(fn.glob(install_path)) > 0 then
-		fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
-		vim.cmd [[packadd packer.nvim]]
-		return true
-	end
-	return false
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	-- Install lazy.nvim
+	vim.fn.system({
+			"git",
+			"clone",
+			"--filter=blob:none",
+			"https://github.com/folke/lazy.nvim.git",
+			"--branch=stable",
+			lazypath,
+		})
 end
+vim.opt.rtp:prepend(lazypath)
 
-local packer_bootstrap = ensure_packer()
-
-return require('packer').startup(function(use)
-	use 'wbthomason/packer.nvim'
-
-	-- Color
-	use 'arcticicestudio/nord-vim'
-	use 'sheerun/vim-polyglot'
-
-	-- Misc.
-	use {'knubie/vim-kitty-navigator', run =  'cp ./*.py ~/.config/kitty/'}
-	use 'editorconfig/editorconfig-vim'
-	use 'thaerkh/vim-indentguides'
-	use 'tpope/vim-commentary'
-	use 'tpope/vim-dispatch'
-	use 'tpope/vim-jdaddy'
-	use 'tpope/vim-surround'
-	use 'easymotion/vim-easymotion'
-	use 'vim-test/vim-test'
-	-- For vim-test
-	use 'skywind3000/asyncrun.vim'
-
-	-- Distraction-free writing
-	use 'Pocco81/true-zen.nvim'
-
-	-- Snippets
-	-- vim-addon-mw-utils and tlib_vim are dependencies for vim-snipmate
-	use 'MarcWeber/vim-addon-mw-utils'
-	use 'tomtom/tlib_vim'
-	use 'garbas/vim-snipmate'
-
-	-- LSP
-	use 'neovim/nvim-lspconfig'
-	use {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'}
-
+require('lazy').setup({
+	{
+		'arcticicestudio/nord-vim',
+		lazy = false,
+		priority = 1000,
+		config = function()
+			vim.cmd([[colorscheme nord]])
+		end,
+	},
+	{'editorconfig/editorconfig-vim', lazy = false },
+	{'knubie/vim-kitty-navigator', build = 'cp ./*.py ~/.config/kitty/'},
+	{
+		'vim-test/vim-test',
+		dependencies = { 'skywind3000/asyncrun.vim' },
+		cmd = {"TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit"}
+	},
+	{
+		"nvim-telescope/telescope.nvim",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		lazy = true,
+		cmd = { "Telescope" }
+	},
+	{
+		"folke/which-key.nvim",
+		event = "VeryLazy",
+		config = function()
+			vim.o.timeout = true
+			vim.o.timeoutlen = 300
+			require("which-key").setup({})
+		end,
+	},
+	-- 'Pocco81/true-zen.nvim', -- Distraction-free writing
+	-- 'neovim/nvim-lspconfig',
+	-- {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
 	-- Python
-	use 'psf/black'
-
-	-- JS/CSS/HTML
-	use 'prettier/vim-prettier'
-	use 'mattn/emmet-vim'
-
-	-- File / buffer navigation
-	use {'junegunn/fzf', run = function() vim.fn["fzf#install"]() end}
-	use 'junegunn/fzf.vim'
-
-	-- Git
-	use 'tpope/vim-fugitive'
-	use 'airblade/vim-gitgutter'
-
-	-- Statusline
-	use 'vim-airline/vim-airline'
-	use 'vim-airline/vim-airline-themes'
-
-	-- Automatically set up your configuration after cloning packer.nvim
-	-- Put this at the end after all plugins
-	if packer_bootstrap then
-		require('packer').sync()
-	end
-end)
+	-- 'psf/black',
+	-- Web
+	-- 'prettier/vim-prettier',
+	-- 'mattn/emmet-vim',
+})
