@@ -37,7 +37,7 @@ vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
 vim.keymap.set("n", "<leader>f/", "<cmd>Telescope live_grep<cr>")
 vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
--- TODO: binding for jumplist!
+vim.keymap.set("n", "<leader>fj", "<cmd>Telescope jumplist<cr>")
 
 -- Testing
 -- vim.keymap.set("n", "<leader>t", ":TestNearest<CR>")
