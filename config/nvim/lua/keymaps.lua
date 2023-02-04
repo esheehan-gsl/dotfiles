@@ -39,6 +39,9 @@ vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
 vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
 vim.keymap.set("n", "<leader>fj", "<cmd>Telescope jumplist<cr>")
 
+-- LazyGit
+vim.keymap.set("n", "<leader>gg", function() require("lazy.util").float_term({ "lazygit" }) end, { desc = "Lazygit" })
+
 -- Testing
 -- vim.keymap.set("n", "<leader>t", ":TestNearest<CR>")
 -- vim.keymap.set("n", "<leader>T", ":TestFile<CR>")
