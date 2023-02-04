@@ -2,12 +2,27 @@
 -- Description: NeoVim configuration
 -- vim: set fdm=marker fdl=0 ts=2 sw=2 noet tw=80 :
 
-require("config/options");
-require("config/plugins")
--- require("config/lsp")
--- require("config/treesitter")
-require("config/autocmds");
-require("config/keymaps");
+require("options");
+
+-- Bootstrap lazy.nvim {{{
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	-- Install lazy.nvim
+	vim.fn.system({
+			"git",
+			"clone",
+			"--filter=blob:none",
+			"https://github.com/folke/lazy.nvim.git",
+			"--branch=stable",
+			lazypath,
+		})
+end
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup("plugins")
+-- }}}
+
+require("autocmds");
+require("keymaps");
 
 -- Testing {{{
 vim.g["test#strategy"] = "asyncrun_background"

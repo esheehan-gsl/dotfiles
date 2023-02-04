@@ -2,21 +2,7 @@
 -- Description: NeoVim plugins
 -- vim: set fdm=marker fdl=0 ts=2 sw=2 tw=80 :
 
-local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
-	-- Install lazy.nvim
-	vim.fn.system({
-			"git",
-			"clone",
-			"--filter=blob:none",
-			"https://github.com/folke/lazy.nvim.git",
-			"--branch=stable",
-			lazypath,
-		})
-end
-vim.opt.rtp:prepend(lazypath)
-
-require('lazy').setup({
+return {
 	{
 		'arcticicestudio/nord-vim',
 		lazy = false,
@@ -47,12 +33,20 @@ require('lazy').setup({
 			require("which-key").setup({})
 		end,
 	},
-	-- 'Pocco81/true-zen.nvim', -- Distraction-free writing
-	-- 'neovim/nvim-lspconfig',
-	-- {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
+	-- TODO: leap.nvim
+	-- TODO: lazygit.nvim
+	-- TODO: 'Pocco81/true-zen.nvim', -- Distraction-free writing
+	-- TODO: 'neovim/nvim-lspconfig',
+	-- TODO: {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
 	-- Python
-	-- 'psf/black',
+	-- TODO: 'psf/black',
 	-- Web
-	-- 'prettier/vim-prettier',
-	-- 'mattn/emmet-vim',
-})
+	-- TODO: 'prettier/vim-prettier',
+	-- TODO: 'mattn/emmet-vim',
+	-- TODO: surround plugin
+	-- TODO: snippets
+	-- TODO: toggle comments
+	-- TODO: todo plugin
+	-- TODO: Dressing.nvim?
+	-- TODO: notify
+}
