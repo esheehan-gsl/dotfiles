@@ -12,7 +12,7 @@ return {
 		end,
 	},
 	{'editorconfig/editorconfig-vim', lazy = false },
-	{'knubie/vim-kitty-navigator', build = 'cp ./*.py ~/.config/kitty/'},
+	{'knubie/vim-kitty-navigator', lazy = false, build = 'cp ./*.py ~/.config/kitty/'},
 	{
 		'vim-test/vim-test',
 		dependencies = { 'skywind3000/asyncrun.vim' },
