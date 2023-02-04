@@ -33,7 +33,6 @@ return {
 			require("which-key").setup({})
 		end,
 	},
-	-- TODO: leap.nvim
 	{
 		"rcarriga/nvim-notify",
 		keys = {
@@ -54,6 +53,13 @@ return {
 			--
 			-- Replace default notify function with nvim-notify
 			vim.notify = notify
+		end,
+	},
+	{
+		"ggandor/leap.nvim",
+		dependencies = { "ggandor/flit.nvim", "tpope/vim-repeat" },
+		config = function()
+			require("leap").add_default_mappings()
 		end,
 	},
 	-- TODO: 'Pocco81/true-zen.nvim', -- Distraction-free writing
