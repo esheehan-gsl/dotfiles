@@ -10,7 +10,6 @@ return {
 		opts = {
 			highlight = { enable = true },
 			indent = { enable = true },
-			-- TODO: What this do?
 			context_commentstring = { enable = true, enabled_autocmd = false },
 			ensure_installed = {
 				"bash",
