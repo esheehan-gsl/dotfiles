@@ -27,7 +27,6 @@ return {
 	},
 	-- TODO: 'Pocco81/true-zen.nvim', -- Distraction-free writing
 	-- TODO: 'neovim/nvim-lspconfig',
-	-- TODO: {'nvim-treesitter/nvim-treesitter', run = ':TSUpdate'},
 	-- Python
 	-- TODO: 'psf/black',
 	-- Web
