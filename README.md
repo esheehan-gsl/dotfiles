@@ -14,6 +14,7 @@ Just an ever-changing collection of config files.
  - fzf
  - procs
  - xclip
+ - [ripgrep](https://github.com/BurntSushi/ripgrep)
 
  - tree-sitter CLI? (`npm install -g tree-sitter-cli`)
 
