@@ -51,6 +51,7 @@ return {
 			require("mini.comment").setup(opts)
 		end,
 	},
+	-- TODO: mini.ai for better text objects?
 	{
 		"lewis6991/gitsigns.nvim",
 		event = "BufReadPre",
