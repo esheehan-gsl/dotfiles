@@ -2,108 +2,40 @@
 -- Description: NeoVim configuration
 -- vim: set fdm=marker fdl=0 ts=2 sw=2 noet tw=80 :
 
--- Load the basic vim configuration from .vimrc. I keep some basic set up like
--- line numbers in the old ~/.vimrc location for any time I end up not having
--- access to NeoVim.
-vim.cmd.source(vim.fn.expand('$HOME')..'/.vimrc')
+require("options");
 
--- Disable syntax highlighting because tree-sitter will take care of it.
-vim.cmd.syntax('off')
-
-require('config/plugins')
-require('config/lsp')
-require('config/treesitter')
-
--- Ignore {{{
-vim.opt.wildignore:append({'*.pyc', '*.min.js'})
-vim.opt.wildignore:append({'*.png', '*.PNG', '*.JPG', '*.jpg', '*.JPEG', '*.jpeg', '*.GIF', '*.gif', '*.pdf', '*.PDF', '*.mov', '*.mp4'})
--- }}}
-
--- Folding {{{
-vim.opt.foldenable = true
-vim.opt.foldlevel = 99
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
--- }}}
-
--- Undo {{{
-vim.opt.undofile = true
-vim.opt.undodir = vim.fn.stdpath('data')..'/undo'
-vim.opt.undolevels = 10000
-vim.opt.undoreload = 1000
--- }}}
-
--- Colors {{{
--- let $NVIM_TUI_ENABLE_TRUE_COLOR=1
-
-if vim.fn.has('termguicolors') then
- vim.opt.termguicolors = true
+-- Bootstrap lazy.nvim {{{
+local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
+if not vim.loop.fs_stat(lazypath) then
+	-- Install lazy.nvim
+	vim.fn.system({
+			"git",
+			"clone",
+			"--filter=blob:none",
+			"https://github.com/folke/lazy.nvim.git",
+			"--branch=stable",
+			lazypath,
+		})
 end
-
-vim.cmd.syntax('on')
-vim.cmd.colorscheme('nord')
-
--- Enable transparent background
-vim.cmd([[
-	hi Normal guibg=NONE ctermbg=NONE
-	hi LineNr guibg=NONE ctermbg=NONE
-	hi SignColumn guibg=NONE ctermbg=NONE
-	hi EndOfBuffer guibg=NONE ctermbg=NONE
-]])
-
-vim.g.airline_theme = 'nord'
-
-vim.g.python_highlight_all = 1
--- }}}
-
--- Syntax highlighting {{{
-vim.api.nvim_create_autocmd({'BufNewFile', 'BufReadPost'}, {
-	pattern = {'*.svelte', '*.njk', '*.webc'},
-	command = 'set syntax=html',
+vim.opt.rtp:prepend(lazypath)
+require("lazy").setup("plugins", {
+	colorsheme = "nord",
 })
 -- }}}
 
--- Airline {{{
-vim.g['airline#extensions#branch#displayed_head_limit'] = 12
-vim.g.airline_section_z = '☰ %l/%L  : %c'
--- }}}
-
--- FZF {{{
-vim.keymap.set('n', '<C-p>', ':GFiles<CR>')
--- }}}
+require("autocmds");
+require("keymaps");
 
 -- Testing {{{
-vim.g['test#strategy'] = 'asyncrun_background'
-
-vim.keymap.set('n', '<leader>t', ':TestNearest<CR>')
-vim.keymap.set('n', '<leader>T', ':TestFile<CR>')
-vim.keymap.set('n', '<leader>a', ':TestSuite<CR>')
-vim.keymap.set('n', '<leader>l', ':TestLast<CR>')
-vim.keymap.set('n', '<leader>g', ':TestVisit<CR>')
---
-
--- Linting / Formatting {{{
--- Python
-vim.api.nvim_create_autocmd({'BufWritePre'}, {
-	pattern = {'*.py'},
-	command = ':Black'
-})
+vim.g["test#strategy"] = "asyncrun_background"
 
 -- HTML/CSS/JS
-vim.g['prettier#autoformat_config_present'] = 1
--- }}}
-
--- Distraction-free writing {{{
-require('true-zen').setup()
--- }}}
-
--- Snippets {{{
-vim.g.snipMate = { snippet_version = 1 }
+vim.g["prettier#autoformat_config_present"] = 1
 -- }}}
 
 -- Local config {{{
-local ok, local_config = pcall(require, 'config/local')
+local ok, local_config = pcall(require, "config/local")
 if ok then
-  print('Loaded local config')
+  print("Loaded local config")
 end
 -- }}}
