@@ -27,14 +27,6 @@ vim.keymap.set("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to other buffe
 -- Clear search with <Esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
--- Telescope
--- TODO: descriptions for which-key
-vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
-vim.keymap.set("n", "<leader>f/", "<cmd>Telescope live_grep<cr>")
-vim.keymap.set("n", "<leader>fb", "<cmd>Telescope buffers<cr>")
-vim.keymap.set("n", "<leader>fh", "<cmd>Telescope help_tags<cr>")
-vim.keymap.set("n", "<leader>fj", "<cmd>Telescope jumplist<cr>")
-
 -- LazyGit
 vim.keymap.set("n", "<leader>gg", function() require("lazy.util").float_term({ "lazygit" }) end, { desc = "Lazygit" })
 

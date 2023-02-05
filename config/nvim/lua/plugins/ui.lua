@@ -6,16 +6,36 @@ return {
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
 			-- TODO register prefixes with names
-			require("which-key").setup({})
+			local wk = require("which-key")
+			wk.setup({})
+			wk.register({
+				mode = { "n", "v" },
+				["g"] = { name = "+goto" },
+				["ms"] = { name = "+surround" },
+				["]"] = { name = "+next" },
+				["["] = { name = "+prev" },
+				["<leader>f"] = { name = "+file/find" },
+				["<leader>g"] = { name = "+git" },
+				["<leader>gh"] = { name = "+hunks" },
+				["<leader>s"] = { name = "+search" },
+				["<leader>x"] = { name = "+diagnostics/quickfix" },
+			})
 		end,
 	},
 	{
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = true,
-		-- TODO: Move keybindings here
-		-- TODO: Add keybinding for notify
-		cmd = { "Telescope" },
+		keys = {
+			{ "<leader>/", "<cmd>Telescope live_grep<cr>", desc = "Find in Files (Grep)" },
+			-- find
+			{ "<leader>fb", "<cmd>Telescope buffers<cr>", desc = "Buffers" },
+			{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+			{ "<leader>fj", "<cmd>Telescope jumplist<cr>", desc = "Jumplist" },
+			-- search
+			{ "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
+			{ "<leader>sk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
+		},
 		config = function(_, opts)
 			local tele = require("telescope")
 			tele.setup(opts)
