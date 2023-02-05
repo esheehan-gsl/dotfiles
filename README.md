@@ -4,23 +4,19 @@ Just an ever-changing collection of config files.
 
 ## Dependencies
 
- - [yarn](https://yarnpkg.com/) (for `vim-prettier`)
- - fzf
- - xclip
- - fd-find
+ - [Lazygit](https://github.com/jesseduffield/lazygit)
  - [exa](https://the.exa.website/#installation)
  - [neovim](https://github.com/neovim/neovim/releases)
- - fish `sudo add-apt-repository ppa:fish-shell/release-3`
- - tree-sitter CLI (`npm install -g tree-sitter-cli`)
- - [Lazygit](https://github.com/jesseduffield/lazygit)
+ - batcat
+ - [delta](https://github.com/dandavison/delta)
+ - [fd](https://github.com/sharkdp/fd)
+ - [fish](https://fishshell.com/) (3.4+) `sudo add-apt-repository ppa:fish-shell/release-3`
+ - fzf
+ - procs
+ - xclip
 
-### Language servers
+ - tree-sitter CLI? (`npm install -g tree-sitter-cli`)
 
-```
-npm install --global \
-    pyright \
-    svelte-language-server \
-    typescript-language-server \
-    vim-language-server \
-    vscode-langservers-extracted
-```
+ ## Additional Tools
+
+ - [jq](https://stedolan.github.io/jq/)
