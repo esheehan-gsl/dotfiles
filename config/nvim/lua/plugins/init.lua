@@ -32,6 +32,5 @@ return {
 	-- TODO: 'prettier/vim-prettier',
 	-- TODO: 'mattn/emmet-vim',
 	-- TODO: snippets
-	-- TODO: todo plugin
 	-- TODO: Dressing.nvim?
 }
