@@ -7,6 +7,13 @@ return {
 		}
 	},
 	{
+		"echasnovski/mini.pairs",
+		event = "VeryLazy",
+		config = function(_, opts)
+			require("mini.pairs").setup(opts)
+		end,
+	},
+	{
 		"echasnovski/mini.surround",
 		keys = function(plugin, keys)
       -- Populate the keys based on the user's options
