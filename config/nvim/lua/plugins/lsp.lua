@@ -45,7 +45,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
-		-- BUG: errors regarding lua-language-server
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",

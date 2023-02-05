@@ -1,5 +1,5 @@
 return {
-	{
+	{ -- which-key
 		"folke/which-key.nvim",
 		event = "VeryLazy",
 		config = function()
@@ -23,7 +23,7 @@ return {
 			})
 		end,
 	},
-	{
+	{ -- telescope
 		"nvim-telescope/telescope.nvim",
 		dependencies = { "nvim-lua/plenary.nvim" },
 		lazy = true,
@@ -43,7 +43,7 @@ return {
 			tele.load_extension("notify")
 		end,
 	},
-	{
+	{ -- notify
 		"rcarriga/nvim-notify",
 		lazy = false,
 		keys = {
@@ -66,9 +66,7 @@ return {
 			vim.notify = notify
 		end,
 	},
-
-	-- better diagnostics list and others
-  {
+  { -- trouble: better diagnostics list and others
     "folke/trouble.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
     cmd = { "TroubleToggle", "Trouble" },
@@ -78,9 +76,7 @@ return {
       { "<leader>xX", "<cmd>TroubleToggle workspace_diagnostics<cr>", desc = "Workspace Diagnostics (Trouble)" },
     },
   },
-
-  -- todo comments
-  {
+  { -- todo comments
     "folke/todo-comments.nvim",
     cmd = { "TodoTrouble", "TodoTelescope" },
     event = "BufReadPost",
