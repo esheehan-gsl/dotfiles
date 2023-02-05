@@ -5,6 +5,7 @@ return {
 		config = function()
 			vim.o.timeout = true
 			vim.o.timeoutlen = 300
+			-- TODO register prefixes with names
 			require("which-key").setup({})
 		end,
 	},
