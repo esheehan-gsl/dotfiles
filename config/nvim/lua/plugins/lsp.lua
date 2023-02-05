@@ -83,5 +83,5 @@ return {
 		end,
 	},
 
-	-- TODO: null-ls.nvim?
+	-- TODO: null-ls.nvim for formatting with lsp?
 }

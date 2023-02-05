@@ -43,7 +43,6 @@ return {
 		end,
 	},
 	{
-		-- TODO: Add nerdfont for icons? Or change how notifications are displayed?
 		"rcarriga/nvim-notify",
 		lazy = false,
 		keys = {
