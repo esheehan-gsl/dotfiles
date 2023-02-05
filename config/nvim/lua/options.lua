@@ -5,6 +5,10 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+vim.g.netrw_banner = 0    -- Hide the banner
+vim.g.netrw_liststyle = 3 -- Tree view
+vim.g.netrw_list_hide = vim.fn["netrw_gitignore#Hide"]()
+
 local opt = vim.opt
 
 opt.breakindent = true
