@@ -27,10 +27,6 @@ vim.keymap.set("n", "<leader>`", "<cmd>e #<cr>", { desc = "Switch to other buffe
 -- Clear search with <Esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
--- Lazy
--- TODO: Is this : necessary, or can it just be <cmd>Lazy<cr>?
-vim.keymap.set("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
-
 -- Telescope
 -- TODO: descriptions for which-key
 vim.keymap.set("n", "<leader>ff", "<cmd>Telescope find_files<cr>")
