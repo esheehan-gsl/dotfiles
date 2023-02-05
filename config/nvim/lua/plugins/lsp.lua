@@ -1,13 +1,55 @@
 return {
+	{ -- auto completion
+		"hrsh7th/nvim-cmp",
+		version = false,
+		event = "InsertEnter",
+		dependencies = {
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-buffer",
+			"hrsh7th/cmp-path",
+			"saadparwaiz1/cmp_luasnip",
+		},
+		opts = function()
+			local cmp = require("cmp")
+			return {
+				completion = {
+					completeopt = "menu,menuone,noinsert",
+				},
+				snippet = {
+					expand = function(args)
+						require("luasnip").lsp_expand(args.body)
+					end,
+				},
+				mapping = cmp.mapping.preset.insert({
+					["<C-b>"] = cmp.mapping.scroll_docs(-4),
+					["<C-f>"] = cmp.mapping.scroll_docs(4),
+					["<C-Space>"] = cmp.mapping.complete(),
+					["<C-e>"] = cmp.mapping.abort(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+				}),
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+					{ name = "luasnip" },
+					{ name = "buffer" },
+					{ name = "path" },
+				}),
+				experimental = {
+					-- TODO: What this do?
+					ghost_text = {
+						hl_group = "LspCodeLens",
+					},
+				},
+			}
+		end,
+	},
 	{
 		"neovim/nvim-lspconfig",
 		event = "BufReadPre",
 		-- BUG: errors regarding lua-language-server
-		enabled = false,
 		dependencies = {
 			"williamboman/mason.nvim",
 			"williamboman/mason-lspconfig.nvim",
-			-- TODO: Add "hrsh7th/cmp-nvim-lsp" for additional completion capabilities?
+			"hrsh7th/cmp-nvim-lsp",
 			-- TODO: folke/neoconf.nvim for project local config?
 			-- TODO: "folke/neodev.nvim" for NeoVim lua completions? Needs cmp-nvim-lsp?
 		},
@@ -46,14 +88,9 @@ return {
 				"dockerls",
 				"eslint",
 				"emmet_ls",
-				-- "flake8",
 				"html",
 				"jsonls",
 				"pyright",
-				-- "shellcheck",
-				-- "shfmt",
-				-- "stylelua",
-				-- "sumneko_lua",
 				"svelte",
 				"taplo", -- TOML
 				"tsserver",
@@ -83,5 +120,41 @@ return {
 		end,
 	},
 
-	-- TODO: null-ls.nvim for formatting with lsp?
+	{
+		"jose-elias-alvarez/null-ls.nvim",
+		event = "BufReadPre",
+		dependencies = { "williamboman/mason.nvim" },
+		opts = function()
+			local nls = require("null-ls")
+			return {
+				sources = {
+					nls.builtins.formatting.stylua,
+					nls.builtins.diagnostics.flake8,
+				}
+			}
+		end,
+	},
+
+	{
+		"williamboman/mason.nvim",
+		cmd = "Mason",
+		opts = {
+			ensure_installed = {
+				"stylua",
+				"shellcheck",
+				"shfmt",
+				"flake8",
+			},
+		},
+		config = function(_, opts)
+			require("mason").setup(opts)
+			local registry = require("mason-registry")
+			for _, name in ipairs(opts.ensure_installed) do
+				local pkg = registry.get_package(name)
+				if not pkg:is_installed() then
+					pkg:install()
+				end
+			end
+		end,
+	},
 }
