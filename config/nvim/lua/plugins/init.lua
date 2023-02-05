@@ -4,7 +4,7 @@
 
 return {
 	{
-		'arcticicestudio/nord-vim',
+		"shaunsingh/nord.nvim",
 		lazy = false,
 		priority = 1000,
 		config = function()
