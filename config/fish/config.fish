@@ -30,12 +30,19 @@ if status is-interactive
 	abbr --add --global lt 'exa --long --header --git --all --tree'
 	abbr --add --global tree 'exa --tree'
 
-	abbr --add --global fd 'fdfind'
+	if type -q fdfind
+		abbr --add --global fd 'fdfind'
+	end
+
 	abbr --add --global 'dci' 'docker rmi (docker images -a --filter=dangling=true -q)'
 
 	abbr --add --global p 'procs'
 
-	abbr --add --global c 'batcat'
+	if type -q batcat
+		abbr --add --global c 'batcat'
+	else if type -q bat
+		abbr --add --global c 'bat'
+	end
 end
 
 if test -e ~/.config/fish/local.fish
