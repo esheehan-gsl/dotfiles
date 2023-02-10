@@ -11,6 +11,7 @@ return {
 			wk.register({
 				mode = { "n", "v" },
 				["g"] = { name = "+goto" },
+				["m"] = { name = "+surround" },
 				["]"] = { name = "+next" },
 				["["] = { name = "+prev" },
 				["<leader>c"] = { name = "+code" },

@@ -32,13 +32,13 @@ return {
 		opts = {
 			-- Copy settings from vim-surround
 			mappings = {
-				add = "ys",
-				delete = "yd",
-				find = "",
-				find_left = "",
-				highlight = "yH",
-				replace = "yc",
-				update_n_lines = "",
+				add = "ms",
+				delete = "md",
+				find = "mf",
+				find_left = "mF",
+				highlight = "mh",
+				replace = "mc",
+				update_n_lines = "mn",
 			},
 		},
 		config = function(_, opts)
