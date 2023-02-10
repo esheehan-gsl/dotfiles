@@ -30,14 +30,15 @@ return {
       return vim.list_extend(mappings, keys)
 		end,
 		opts = {
+			-- Copy settings from vim-surround
 			mappings = {
-				add = "msa",
-				delete = "msd",
-				find = "msf",
-				find_left = "msF",
-				highlight = "msh",
-				replace = "msr",
-				update_n_lines = "msn",
+				add = "ys",
+				delete = "yd",
+				find = "",
+				find_left = "",
+				highlight = "yH",
+				replace = "yc",
+				update_n_lines = "",
 			},
 		},
 		config = function(_, opts)
