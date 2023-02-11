@@ -8,7 +8,7 @@ end
 
 if status is-interactive
 
-	fish_add_path ~/.local/bin
+	fish_add_path ~/.local/bin ~/.cargo/bin
 
 	if type -q nvim
 		set -gx EDITOR nvim
