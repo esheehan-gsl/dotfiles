@@ -7,6 +7,8 @@ if status is-login
 end
 
 if status is-interactive
+	# No greeting
+	set -g fish_greeting
 
 	fish_add_path ~/.local/bin ~/.cargo/bin
 
