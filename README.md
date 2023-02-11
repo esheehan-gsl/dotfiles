@@ -17,6 +17,7 @@ Just an ever-changing collection of config files.
  - xclip
  - [ripgrep](https://github.com/BurntSushi/ripgrep)
  - [Nerd font](https://www.nerdfonts.com/)
+ - [zellij](https://zellij.dev/documentation/installation.html)
 
  - tree-sitter CLI? (`npm install -g tree-sitter-cli`)
 
