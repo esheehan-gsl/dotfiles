@@ -7,7 +7,6 @@ if status is-login
 end
 
 if status is-interactive
-	pyenv init - | source
 
 	fish_add_path ~/.local/bin
 
