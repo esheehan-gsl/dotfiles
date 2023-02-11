@@ -9,6 +9,7 @@ Just an ever-changing collection of config files.
  - [neovim](https://github.com/neovim/neovim/releases)
  - batcat
  - [delta](https://github.com/dandavison/delta)
+ - [dust](https://github.com/bootandy/dust)
  - [fd](https://github.com/sharkdp/fd)
  - [fish](https://fishshell.com/) (3.4+) `sudo add-apt-repository ppa:fish-shell/release-3`
  - fzf
