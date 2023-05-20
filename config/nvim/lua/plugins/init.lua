@@ -4,11 +4,11 @@
 
 return {
 	{
-		"shaunsingh/nord.nvim",
+		"preservim/vim-colors-pencil",
 		lazy = false,
 		priority = 1000,
 		config = function()
-			vim.cmd([[colorscheme nord]])
+			vim.cmd([[colorscheme pencil]])
 		end,
 	},
 	{ "editorconfig/editorconfig-vim", lazy = false },
