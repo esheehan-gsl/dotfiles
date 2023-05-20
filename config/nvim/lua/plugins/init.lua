@@ -11,12 +11,12 @@ return {
 			vim.cmd([[colorscheme nord]])
 		end,
 	},
-	{'editorconfig/editorconfig-vim', lazy = false },
-	{'knubie/vim-kitty-navigator', lazy = false, build = 'cp ./*.py ~/.config/kitty/'},
+	{ "editorconfig/editorconfig-vim", lazy = false },
+	{ "knubie/vim-kitty-navigator", lazy = false, build = "cp ./*.py ~/.config/kitty/" },
 	{
-		'vim-test/vim-test',
-		dependencies = { 'skywind3000/asyncrun.vim' },
-		cmd = {"TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit"}
+		"vim-test/vim-test",
+		dependencies = { "skywind3000/asyncrun.vim" },
+		cmd = { "TestNearest", "TestFile", "TestSuite", "TestLast", "TestVisit" },
 	},
 	{
 		"ggandor/leap.nvim",
